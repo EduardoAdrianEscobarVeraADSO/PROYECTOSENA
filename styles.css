@@ -1,0 +1,94 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500; 
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+    background-color: black;
+}
+/* Estilos para el bloque de navegación */
+.header {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Estilos para el bloque del logo */
+.logo {
+    max-width: 91px;
+    
+}
+
+.logo__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* Estilos para el elemento de lista del menú */
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Estilos para los elementos de la lista del menú */
+.menu__item {
+    display: inline;
+}
+
+/* Estilos para los enlaces del menú */
+.menu__link {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.menu__link:hover{
+  color: #C1FF73;
+}
+.menu__link:active{
+  color: #75FF44;
+}
+
+/* Estilos para los botones */
+.button {
+    background-color: #f44336;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-weight: 750;
+    font-size: 20px;
+}
+
+.button--register {
+    background-color: white;
+}
+
+.button--login {
+    background-color: white;
+}
+
+.button--register:hover {
+    background-color: #C1FF73;
+    
+}
+.button--register:active{
+  background-color: #75FF44;
+}
+.button--login:hover {
+    background-color: #C1FF73;
+    
+}
+.button--login:active{
+  background-color: #75FF44;
+}
+
