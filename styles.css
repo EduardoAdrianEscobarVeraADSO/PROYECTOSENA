@@ -1,8 +1,6 @@
-html, body {
-    overflow: auto; /* Asegura que el desplazamiento suave esté desactivado en el cuerpo y en el documento HTML */
-    -webkit-overflow-scrolling: auto; /* Deshabilita el desplazamiento suave en navegadores WebKit */
+::-webkit-scrollbar {
+    display: none;
 }
-
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -109,54 +107,92 @@ body {
 
 /* banner */
 .section1__banner{
-    margin: 0; /* Asegurar que no haya márgenes */
-    padding: 0; /* Asegurar que no haya rellenos */
-    
-    
+    margin: 0; 
+    padding: 0;   
 }
+
 .imagen__banner{
-  max-width: 100%; /* La imagen se encogerá para ajustarse al ancho del contenedor */
-  height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+  max-width: 100%; 
+  height: auto; 
 }
+
+
+/* estilos cinta led */
+.led-strip {
+  background-color: black; /* Color de fondo de la cinta LED */
+  padding: 5px 0; /* Añadir un pequeño relleno para los bordes superior e inferior */
+  overflow: hidden; /* Ocultar el texto que se desborda */
+  border-top: 5px rgb(72, 255, 0) solid;
+  border-bottom: 5px rgb(30, 255, 0) solid;
+  margin: 5vw 0 5vw 0;
+
+}
+
+.tendencia {
+  font-size: 2.5vw; /* Tamaño de la fuente */
+  padding: 10px; /* Espaciado dentro del contenedor */
+  white-space: nowrap; /* Evitar el salto de línea */
+  animation: rainbow 5s linear infinite; /* Animación arcoíris */
+}
+
+@keyframes rainbow {
+  0% { color: rgb(43, 255, 0); } /* Rojo */
+  16.666% { color: rgb(255, 255, 255); } /* Naranja */
+  33.333% { color: rgb(51, 255, 0); } /* Amarillo */
+  50% { color: rgb(255, 255, 255); } /* Verde */
+  66.666% { color: rgb(21, 255, 0); } /* Azul */
+  83.333% { color: rgb(248, 248, 248); } /* Índigo */
+  100% { color: rgb(4, 255, 25); } /* Violeta */
+}
+
+
+/* estilos carrusel de imagenes */
 
 .slider-container {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    width: 50%; /* Ancho del carrusel */
-    margin: 0 auto; /* Centrar horizontalmente */
+    width: 50%; 
+    margin: 0 auto; 
 }
 
 .slider-container img {
     scroll-snap-align: center;
-    width: auto; /* Anchura automática */
-    max-width: 100%; /* Máximo ancho del contenedor */
+    width: auto; 
+    max-width: 100%; 
     height: auto;
+    border-radius: 20px;
 }
 
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    width: 80%; /* Ancho del carrusel */
-    margin: 10px auto; /* Centrar horizontalmente y agregar un espacio superior e inferior */
+    width: 80%; 
+    margin: 10px auto; 
 }
 
 .navigation-buttons button {
     padding: 5px 10px;
-    background-color: #ddd;
     border: none;
     cursor: pointer;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-size: 1vw;
+    border-radius: 10px;
 }
 
 
 #prevBtn {
     position: absolute;
-    left: 150;
-    bottom: 150px;
+    left: 120;
+    bottom: -150px;
+    
 }
 
 #nextBtn {
     position: absolute;
-    right: 150px ;
-    bottom: 150px;
+    right: 170px ;
+    bottom: -150px;
 }
+
+
