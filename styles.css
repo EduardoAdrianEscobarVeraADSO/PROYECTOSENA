@@ -158,9 +158,9 @@ body {
 
 .slider-container img {
     scroll-snap-align: center;
-    width: auto; 
-    max-width: 100%; 
-    height: auto;
+    width: 90%; 
+    
+    height: 90%;
     border-radius: 20px;
 }
 
