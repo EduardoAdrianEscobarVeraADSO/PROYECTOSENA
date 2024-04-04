@@ -1,3 +1,8 @@
+html, body {
+    overflow: auto; /* Asegura que el desplazamiento suave esté desactivado en el cuerpo y en el documento HTML */
+    -webkit-overflow-scrolling: auto; /* Deshabilita el desplazamiento suave en navegadores WebKit */
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -6,6 +11,9 @@ body {
   font-variation-settings:
     "slnt" 0;
     background-color: black;
+    -webkit-overflow-scrolling: auto;
+
+
 }
 /* Estilos para el bloque de navegación */
 .header {
@@ -36,11 +44,13 @@ body {
     padding: 0;
     margin: 0;
     font-weight: bold;
+    margin-left: 300px;
 }
 
 /* Estilos para los elementos de la lista del menú */
 .menu__item {
     display: inline;
+    
 }
 
 /* Estilos para los enlaces del menú */
@@ -48,6 +58,8 @@ body {
     color: #fff;
     text-decoration: none;
     padding: 10px;
+    transition: color 0.3s ease;
+    
 }
 
 .menu__link:hover{
@@ -58,6 +70,7 @@ body {
 }
 
 /* Estilos para los botones */
+
 .button {
     background-color: #f44336;
     color: black;
@@ -71,10 +84,12 @@ body {
 
 .button--register {
     background-color: white;
+    transition: background-color 0.3s ease;
 }
 
 .button--login {
     background-color: white;
+    transition: background-color 0.3s ease;
 }
 
 .button--register:hover {
@@ -92,3 +107,56 @@ body {
   background-color: #75FF44;
 }
 
+/* banner */
+.section1__banner{
+    margin: 0; /* Asegurar que no haya márgenes */
+    padding: 0; /* Asegurar que no haya rellenos */
+    
+    
+}
+.imagen__banner{
+  max-width: 100%; /* La imagen se encogerá para ajustarse al ancho del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+}
+
+.slider-container {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    width: 50%; /* Ancho del carrusel */
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.slider-container img {
+    scroll-snap-align: center;
+    width: auto; /* Anchura automática */
+    max-width: 100%; /* Máximo ancho del contenedor */
+    height: auto;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%; /* Ancho del carrusel */
+    margin: 10px auto; /* Centrar horizontalmente y agregar un espacio superior e inferior */
+}
+
+.navigation-buttons button {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+
+#prevBtn {
+    position: absolute;
+    left: 150;
+    bottom: 150px;
+}
+
+#nextBtn {
+    position: absolute;
+    right: 150px ;
+    bottom: 150px;
+}

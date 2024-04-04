@@ -1,3 +1,4 @@
+::-webkit-scrollbar {display: none;}
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -7,6 +8,30 @@ body {
     "slnt" 0;
     background-color: black;
 }
+
+main {
+    animation: slideAndBounce 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Duración, función de temporización y retención de los estilos finales */
+    opacity: 0; /* Configurar opacidad inicial */
+    transform: translateX(100%); /* Configurar desplazamiento inicial */
+}
+
+@keyframes slideAndBounce {
+    0% {
+        transform: translateX(100%); /* Desplazamiento inicial */
+    }
+    70% {
+        transform: translateX(0); 
+    }
+    90% {
+        transform: translateX(-10px); /* Pequeño desplazamiento hacia atrás para el efecto de rebote */
+    }
+    100% {
+        transform: translateX(0); /* Volver a la posición final después del rebote */
+        opacity: 1; 
+    }
+}
+
+
 /* Estilos para el bloque de navegación */
 .header {
     background-color: black;
@@ -17,11 +42,13 @@ body {
     padding: 10px;
 }
 
+
 /* Estilos para el bloque del logo */
 .logo {
     max-width: 70px;
     
 }
+
 
 .logo__image {
     display: block;
@@ -38,24 +65,27 @@ body {
     font-weight: bold;
 }
 
+
 /* Estilos para los elementos de la lista del menú */
 .menu__item {
     display: inline;
 }
+
 
 /* Estilos para los enlaces del menú */
 .menu__link {
     color: #fff;
     text-decoration: none;
     padding: 10px;
+    transition: color 0.3s ease;
 }
-
 .menu__link:hover{
   color: #C1FF73;
 }
 .menu__link:active{
   color: #75FF44;
 }
+
 
 /* Estilos para los botones */
 .button {
@@ -71,10 +101,12 @@ body {
 
 .button--register {
     background-color: white;
+    transition: background-color 0.3s ease;
 }
 
 .button--login {
     background-color: white;
+    transition: background-color 0.3s ease;
 }
 
 .button--register:hover {
@@ -92,8 +124,8 @@ body {
   background-color: #75FF44;
 }
 
-/* seccion login */
 
+/* seccion login */
 .login {
   display: flex;
   justify-content: center;
@@ -166,6 +198,7 @@ body {
   border-radius: 14px;
   font-size: 1.3vw;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 .login__button:hover{
   background-color: #C1FF73;
@@ -180,7 +213,9 @@ body {
   text-decoration: none;
   margin-right: 7vw;
   font-size: 1vw;
+  transition: color 0.3s ease;
 }
 .login__forgot-password:hover{
+  
   color: white;
 }

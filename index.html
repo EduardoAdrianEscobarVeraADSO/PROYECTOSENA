@@ -1,23 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Area 51</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="img/logo.png">
-</head>
-<body>
-  <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Navegación</title>
+    <title>Área 51</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/logo.png">
+    <script src="main.js"></script>
 </head>
 <body>
     <header class="header">
@@ -36,8 +25,35 @@
             <a href="Login/inicio_sesion.html" class="button button--login">Inicio de Sesión</a>
         </div>
     </header>
+    <main>
+        <section id="seccion">
+            <figure class="section1__banner">
+                <img src="banner.png" alt="banner__imagen" class="imagen__banner">
+            </figure>
+        </section>  
+    </main>
+    <div class="slider-container">
+    <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170961-bb0dbf63a6df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2970&q=80"
+    />
+    <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1580501170888-80668882ca0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+    />
+    <img
+        class="slider-item"
+        src="https://images.unsplash.com/photo-1572508589584-94d778209dd9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+    />
+</div>
 
-</body>
-</html>
+<div class="navigation-buttons">
+    <button id="prevBtn">Anterior</button>
+    <button id="nextBtn">Siguiente</button>
+</div>
+
+
+<script src="main.js"></script>
+
 </body>
 </html>
