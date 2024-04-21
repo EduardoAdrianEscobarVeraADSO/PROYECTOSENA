@@ -1,99 +1,157 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-
-::-webkit-scrollbar {
-    display: none;
-}
-body {
+*{
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 500; 
+  font-weight: 500;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
-    background-color: rgb(255, 255, 255);
-    -webkit-overflow-scrolling: auto;
-  margin: 0;
-
 }
-/* Estilos para el menu de navegación superior*/
-
+body{
+  margin: 0;
+  
+}
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
   align-items: center;
-  background: #fff; /* Puedes cambiarlo por el color que prefieras */
+  padding: 10px 30px; /* Reduce el padding si es necesario */
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  z-index: 1; /* Menor z-index para que quede detrás */
+}
+
+.header__menu-icon {
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+.header__logo img {
+  width: 180px; /* Ajusta el tamaño del logo si es necesario */
+  height: auto;
+}
+
+.header__items {
+  display: flex; /* Utiliza flexbox para alinear los ítems */
+  align-items: center; /* Alinea los ítems verticalmente */
+}
+
+.header__items a {
+  color: white;
+  font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
+  padding: 0 10px; /* Ajusta el padding entre íconos */
+  text-decoration: none;
+}
+
+.fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
+  width: 20px;
+  height: 20px;
+  
+}
+.fa-shopping-cart {
+  margin-right: 50px;
+}
+.header__menu {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 2; 
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 80px;
+  
+}
+
+.header__menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  
+}
+
+.header__menu a:hover {
+  color: #f1f1f1;
+}
+
+/* Estilo para el botón de cierre del menú */
+.header__menu-icon--close {
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+/* Cuando el menú está abierto */
+.header__menu--open {
+  width: 250px;
+}
+
+
+
+/* Estilos para el menú inferior*/
+.menu {
+  width: 100%;
+  background: rgba(60, 60, 61, 0.85); /* Fondo claro con opacidad */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto elevado */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000 ;
+}
+
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centra los elementos en el menú */
+  align-items: center;
+  height: 50px; /* Altura fija para el menú */
+}
+
+.menu__item {
   padding: 10px 20px;
 }
 
-.header__logo {}
-
-.header__logo-image {
-  max-width: 100px; /* Ajusta este valor según el tamaño de tu logo */
-}
-
-.header__nav {}
-
-.header__menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.header__menu-item {}
-
-.header__menu-link {
+.menu__link {
   text-decoration: none;
-  color: #333; /* Puedes cambiarlo por el color que prefieras */
+  color: #ffffff; 
+  font-size: 16px;
   font-weight: bold;
 }
 
-.header__login-items {
-  display: flex;
-  gap: 20px;
+.menu__link:hover{
+color: #b6b6b6;
 }
 
-.header__login-link,
-.header__cart-link {
-  text-decoration: none;
-  color: #333; /* Puedes cambiarlo por el color que prefieras */
-  font-size: 1.5rem; /* Ajusta este valor según el tamaño que prefieras para los íconos */
+.header {
+  transition: background-color 0.5s ease; /* Suaviza la transición del color de fondo */
 }
 
-/* Para asegur
-
-/* Estilos para el menu de navegación inferior*/
-.bottom-nav {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(158, 158, 158, 0.5); 
-  backdrop-filter: blur(20px);
-  color: white;
-  z-index: 1000; 
+.header__menu-icon, .header__items a {
+  transition: color 0.5s ease; /* Suaviza la transición del color del texto */
 }
 
-.bottom-nav__list {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.bottom-nav__item {
-  padding: 10px;
-}
-
-.bottom-nav__link {
-  text-decoration: none;
-  color: rgb(80, 80, 80);
-  padding: 10px;
-  display: block;
-}
-
-.bottom-nav__link:hover {
-  color: white;
+/* Si quieres también suavizar el cambio de imagen del logo, necesitarás aplicar un efecto de opacidad */
+#logoImage {
+  transition: opacity 0.5s ease; /* Suaviza la transición de opacidad para el cambio de imagen */
 }
