@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Area 51</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="icon" href="../img/logo.png">
-</head>
-<body>
-  <!DOCTYPE html>
-<html lang="es">
-<head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesion</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styleslogin.css">
+    <title>FORMULARIO DE REGISTRO E INICIO SESIÓN</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="../index.html">
-                <img src="../img/logo.png" alt="Logo de la tienda" class="logo__image">
-            </a>
-        </div>
-        <nav class="nav">
-            <ul class="menu">
-                <li class="menu__item"><a href="#" class="menu__link">Promos</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Productos</a></li>
-                <li class="menu__item"><a href="#" class="menu__link">Tendencias</a></li>
-            </ul>
-        </nav>
-        <div class="login-buttons">
-            <a href="../Login/registro.html" class="button button--register">Registro</a>
-        </div>
-    </header>
-    <main>
-      <section id="seccion1">
-          <div class="login">
-            <div class="login__logo">
-              <img src="../img/img-login-register.png" alt="Logo de la tienda" class="login__logo-image">
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in">
             </div>
-            <div class="login__content">
-              <div class="login__form">
-                <h2 class="login__title">Inicio de sesion</h2>
-                <form action="#" class="login__form-element">
-                    <input type="text" id="usuario" name="usuario" class="login__input" placeholder="ID de usuario">                   
-                    <input type="password" id="contrasena" name="contrasena" class="login__input" placeholder="Contraseña">                                  
-                    <button type="submit" class="login__button">Iniciar sesion</button>
-                    <a href="#" class="login__forgot-password">¿Olvidaste tu contraseña?</a>
-                </form>               
-              </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una Cuenta</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-facebook'></i>
+                    <i class='bx bxl-instagram' ></i>
+                </div>
+                <p>o usa tu email para registrarte</p>
+                <form class="form form-register" novalidate>
+                    <div>
+                        <label>
+                            <i class='bx bx-user' ></i>
+                            <input type="text" placeholder="Nombre Usuario" name="userName" >
+                        </label>
+                    </div>
+                    <div>
+                        <label >
+                            <i class='bx bx-envelope' ></i>
+                            <input type="email" placeholder="Correo Electronico" name="userEmail" >
+                        </label>
+                    </div>
+                   <div>
+                        <label>
+                            <i class='bx bx-lock-alt' ></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword">
+                        </label>
+                   </div>
+                   
+                    <input type="submit" value="Registrarse">
+                    
+                </form>
             </div>
-          </div>
-      </section>
-    </main>
+        </div>
+    </div>
 
-</body>
-</html>
+
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>¡¡Bienvenido nuevamente!!</h2>
+                <p>Para unirte a nuestra comunidad por favor Inicia Sesión con tus datos</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar Sesión</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-github'></i>
+                    <i class='bx bxl-linkedin' ></i>
+                </div>
+                <p>o Iniciar Sesión con una cuenta</p>
+                <form class="form form-login"novalidate>
+                    <div>
+                        <label >
+                            <i class='bx bx-envelope' ></i>
+                            <input type="email" placeholder="Correo Electronico" name="userPassword">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-lock-alt' ></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword">
+                        </label>
+                    </div>
+                    <input type="submit" value="Iniciar Sesión">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <video autoplay muted loop id="bg-video">
+      <source src="/vids/vidlogin.mp4" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+    
+    <script src="script.js"></script>
+
 </body>
 </html>
