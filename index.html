@@ -30,9 +30,9 @@
 
   <!-- Items de navegación -->
   <div class="header__items" id="header__items">
-    <a href="#buscar" class="fas fa-search"></a>
+    <a href="#buscar" class="fas fa-search" onclick="toggleSearch()"></a>
     <a href="#favoritos" class="fas fa-heart"></a>
-    <a href="#perfil" class="fas fa-user"></a>
+    <a href="/Login/inicio_sesion.html" class="fas fa-user"></a>
     <a href="#carrito" class="fas fa-shopping-cart"></a>
   </div>
 
@@ -48,6 +48,17 @@
     <a href="#">Oversizes</a>
     <a href="#">Oversizes</a>
   </div>
+   <!-- Menú desplegable search -->
+  <div id="searchNav" class="header__menu-search">
+    <!-- Botón para cerrar el menú -->
+    <i class="fas fa-times header__menu-search-icon--close" onclick="toggleMenuSearch()"></i>
+    <form class="search-form" onsubmit="event.preventDefault();" role="search">
+      <label class="search-form__label" for="search">Search for stuff</label>
+      <input class="search-form__input" id="search" type="search" placeholder="Search..." autofocus required />
+      <button class="search-form__button" type="submit"><a class="fas fa-search"></a></button>    
+    </form>
+  </div>
+  
 </header>
 <section>
   <div class="video-container">
@@ -55,17 +66,11 @@
       <source src="vids/vidH.mp4" type="video/mp4">
     </video>
   </div>
-</section>
-<section>
   
 </section>
-<!-- menu inferior -->
-<nav class="menu">
-  <ul class="menu__list">
-      <li class="menu__item"><a href="#hombre" class="menu__link">Hombre</a></li>
-      <li class="menu__item"><a href="#mujer" class="menu__link">Mujer</a></li>
-  </ul>
-</nav>
+
+
+
 
 </body>
 </html>

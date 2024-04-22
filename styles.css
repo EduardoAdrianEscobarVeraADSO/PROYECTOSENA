@@ -21,12 +21,6 @@ body{
   z-index: 1000;
 }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  z-index: 1; /* Menor z-index para que quede detrás */
-}
-
 .header__menu-icon {
   border: none;
   background: none;
@@ -87,8 +81,6 @@ body{
 .header__menu a:hover {
   color: #f1f1f1;
 }
-
-/* Estilo para el botón de cierre del menú */
 .header__menu-icon--close {
   font-size: 36px;
   color: #fff;
@@ -98,49 +90,98 @@ body{
   cursor: pointer;
   margin-top: 25px;
 }
+.header__menu-search {
+  width: 100vw; /* Ancho del menú */
+  height: 50vh; /* Altura del menú */
+  position: fixed;
+  top: -100vh; /* Inicia fuera de la pantalla */
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  transition: top 0.5s; /* Animar el cambio de la propiedad top */
+  padding-top: 80px;
+}
 
+.header__menu-search.open {
+  top: 0; /* Mover el menú hacia abajo cuando esté abierto */
+}
+
+
+
+.header__menu-search-icon--close {
+  font-size: 36px;
+  color: #000000;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  cursor: pointer;
+  margin: 25px 25px 0 0;
+}
+.search-form {
+  position: relative;
+  width: 60vw;
+  background: #e7e7e7;
+  border-radius: 55px;
+  right: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.search-form__input, .search-form__button {
+  height: 4vh;
+  border: 0;
+  color: #727272;
+  font-style: italic;
+}
+.search-form__button{
+  color: white;
+}
+.search-form__input[type="search"] {
+  outline: 0;
+  width: 100%;
+  background: #c9c9c9;
+  padding: 0 1.6rem;
+  border-radius: .7rem;
+  appearance: none;
+  transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+
+.search-form__button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  font-weight: bold;
+  background: #000000;
+  border-radius: 0 .7rem .7rem 0;
+}
+
+.search-form__input:not(:placeholder-shown) {
+  border-radius: .7rem 0 0 .7rem;
+  width: calc(100% - 6rem);
+}
+
+.search-form__input:not(:placeholder-shown) + .search-form__button {
+  display: block;
+}
+
+.search-form__label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 /* Cuando el menú está abierto */
 .header__menu--open {
-  width: 250px;
-}
-
-
-
-/* Estilos para el menú inferior*/
-.menu {
-  width: 100%;
-  background: rgba(60, 60, 61, 0.85); /* Fondo claro con opacidad */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque en el fondo */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar efecto elevado */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 1000 ;
-}
-
-.menu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center; /* Centra los elementos en el menú */
-  align-items: center;
-  height: 50px; /* Altura fija para el menú */
-}
-
-.menu__item {
-  padding: 10px 20px;
-}
-
-.menu__link {
-  text-decoration: none;
-  color: #ffffff; 
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.menu__link:hover{
-color: #b6b6b6;
+  width: 2500px;
 }
 
 .header {
@@ -151,7 +192,19 @@ color: #b6b6b6;
   transition: color 0.5s ease; /* Suaviza la transición del color del texto */
 }
 
-/* Si quieres también suavizar el cambio de imagen del logo, necesitarás aplicar un efecto de opacidad */
+
 #logoImage {
   transition: opacity 0.5s ease; /* Suaviza la transición de opacidad para el cambio de imagen */
 }
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Menor z-index para que quede detrás */
+  object-fit: cover;
+  overflow: hidden;
+}
+
+

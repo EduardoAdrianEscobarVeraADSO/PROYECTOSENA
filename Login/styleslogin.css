@@ -149,7 +149,21 @@ body {
   margin-top: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
-
+.regresar__home{
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  text-decoration: none;
+}
+.regresar__home:hover{
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
 .form input[type="submit"]:hover {
   background-color: #000000;
   color: rgb(255, 255, 255);
@@ -166,8 +180,9 @@ body {
   left: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: -1; /* Para que el video esté detrás del contenido */
+  z-index: -10000; /* Para que el video esté detrás del contenido */
 }
+
 
 
 /*RESPONSIVE FORM*/
