@@ -13,6 +13,7 @@ body{
     position: sticky;
     top: 0; 
     width: 96%;
+    z-index: 1;
   }
   
   .header__menu-icon {
@@ -31,6 +32,7 @@ body{
   .header__items {
     display: flex; /* Utiliza flexbox para alinear los ítems */
     align-items: center; /* Alinea los ítems verticalmente */
+    
   }
   
   .header__items a {
@@ -38,16 +40,14 @@ body{
     font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
     padding: 0 10px; /* Ajusta el padding entre íconos */
     text-decoration: none;
+    
   }
   
   .fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
     width: 20px;
     height: 20px;
-    
   }
-  .fa-shopping-cart {
-    margin-right: 50px;
-  }
+
   .header__menu {
     height: 100vh;
     width: 0;
@@ -85,42 +85,70 @@ body{
     margin-top: 25px;
   }
   
-  .header__menu-skirts{
-    color: black;
+  .header__menu-redes{
+    color: #818181;
+    list-style: none;
+    display: flex;
+    margin-top: 20px;
+    
   }
-  .header__menu-search {
-    width: 100vw; /* Ancho del menú */
-    height: 50vh; /* Altura del menú */
-    position: fixed;
-    top: -100vh; /* Inicia fuera de la pantalla */
-    left: 0;
-    background-color: #ffffff;
-    overflow-x: hidden;
-    transition: top 0.5s; /* Animar el cambio de la propiedad top */
-    padding-top: 80px;
+  .fa-instagram, .fa-facebook, .fa-whatsapp{
+    width:44px;
+    height: auto;
+    padding-left: 10px;
   }
-  
-  .header__menu-search.open {
-    top: 0; /* Mover el menú hacia abajo cuando esté abierto */
-  }
-  
-  .header__menu-search-icon--close {
-    font-size: 36px;
-    color: #000000;
-    position: absolute;
-    top: 0;
-    right: 25px;
-    cursor: pointer;
-    margin: 25px 25px 0 0;
-  }
+  .fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
+  color: #fff;
+ }
 
   /* main */
+  .filter {
+  width: 15vw;
+  max-width: 300px;
+  float: right;
+  margin-top: 25px;
+  margin-right: 10px;
+  /* Ajusta los estilos según sea necesario */
+}
 
+.filter__container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter__item {
+  margin-bottom: 20px;
+}
+
+.filter__item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter__item select,
+.filter__item input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Ajusta más estilos según necesites */
+
+.products__container{
+    display: grid;
+    place-items: center;
+}
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px; /* Aumenta el espacio entre los productos */
     margin-top: 20px;
+    width: 90%;
 }
 
 .products__item {
@@ -129,11 +157,13 @@ body{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
     transition: box-shadow 0.3s ease; /* Agrega una transición suave para el efecto de hover */
-   
+    transition: transform 0.3s ease;
 }
+
 
 .products__item:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en el hover */
+    transform: scale(1.1);
 }
 
 .products__item img {
