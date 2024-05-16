@@ -9,21 +9,7 @@ function toggleMenu() {
     }
 }
   
-function toggleMenuSearch() {
-  var menu = document.getElementById("searchNav");
-    if (menu.style.width === '100vw') {
-      menu.style.width = '0';
-    } else {
-      menu.style.width = '100vw';
-  }
-  if (menu.style.height === '50vh') {
-        menu.style.height = '0';
-    } else {
-        menu.style.height = '50vh';
-  }
 
-  }
-    
   
 // Función para ejecutar animacion scroll header superior
 
@@ -45,25 +31,3 @@ function toggleMenuSearch() {
       Array.from(headerItems).forEach(item => item.style.color = 'white'); 
     }
   });
-
-  // Función para abrir/cerrar la búsqueda emergente
-function toggleSearch(show) {
-  var searchPopup = document.getElementById("searchPopup");
-  if (show) {
-    searchPopup.classList.add('active');
-  } else {
-    searchPopup.classList.remove('active');
-  }
-}
-
-// Función para ejecutar la búsqueda
-function performSearch() {
-  var query = document.querySelector('.search-input').value;
-  console.log('Buscar:', query);
-  // Aquí manejas la lógica de búsqueda o redirección.
-}
-
-// Modificar el evento click del ícono de búsqueda para abrir la búsqueda emergente
-document.querySelector('.fa-search').addEventListener('click', function() {
-  toggleSearch(true);
-});

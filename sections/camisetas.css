@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.header {
+    display: flex;
+    justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
+    align-items: center;
+    padding: 10px 30px; /* Reduce el padding si es necesario */
+    background-color: white;
+    position: -webkit-sticky; /* Para la compatibilidad con algunos navegadores */
+    position: sticky;
+    top: 0; 
+    width: 96%;
+  }
+  
+  .header__menu-icon {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+  }
+  
+  .header__logo img {
+    width: 180px; /* Ajusta el tamaño del logo si es necesario */
+    height: auto;
+  }
+  
+  .header__items {
+    display: flex; /* Utiliza flexbox para alinear los ítems */
+    align-items: center; /* Alinea los ítems verticalmente */
+  }
+  
+  .header__items a {
+    color: rgb(0, 0, 0);
+    font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
+    padding: 0 10px; /* Ajusta el padding entre íconos */
+    text-decoration: none;
+  }
+  
+  .fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
+    width: 20px;
+    height: 20px;
+    
+  }
+  .fa-shopping-cart {
+    margin-right: 50px;
+  }
+  .header__menu {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 2; 
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 80px;
+    
+  }
+  
+  .header__menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    
+  }
+  
+  .header__menu a:hover {
+    color: #f1f1f1;
+  }
+  .header__menu-icon--close {
+    font-size: 36px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+  
+  .header__menu-skirts{
+    color: black;
+  }
+  .header__menu-search {
+    width: 100vw; /* Ancho del menú */
+    height: 50vh; /* Altura del menú */
+    position: fixed;
+    top: -100vh; /* Inicia fuera de la pantalla */
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: top 0.5s; /* Animar el cambio de la propiedad top */
+    padding-top: 80px;
+  }
+  
+  .header__menu-search.open {
+    top: 0; /* Mover el menú hacia abajo cuando esté abierto */
+  }
+  
+  .header__menu-search-icon--close {
+    font-size: 36px;
+    color: #000000;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    cursor: pointer;
+    margin: 25px 25px 0 0;
+  }
+
+  /* main */
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px; /* Aumenta el espacio entre los productos */
+    margin-top: 20px;
+}
+
+.products__item {
+    background-color: #fff; /* Cambia el color de fondo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    transition: box-shadow 0.3s ease; /* Agrega una transición suave para el efecto de hover */
+   
+}
+
+.products__item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en el hover */
+}
+
+.products__item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px; /* Aumenta el espacio entre la imagen y el título */
+    border-radius: 10px;
+}
+
+.products__title {
+    font-size: 18px; /* Aumenta el tamaño del título */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.products__price {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
