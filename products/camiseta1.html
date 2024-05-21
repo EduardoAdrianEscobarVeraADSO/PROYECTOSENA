@@ -1,0 +1,233 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisas</title>
+    <link rel="stylesheet" href="styles-products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image" href="../img/logopage.jpg">
+</head>
+<body>
+    <header class="header">
+        <!-- Icono para abrir el menú -->
+        <div class="header__menu-icon" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      
+        <!-- Logo -->
+        <div class="header__logo">
+          <a href="../index.html"><img src="../img/logo.png" alt="Logo" id="logoImage"></a>
+        </div>
+      
+        <!-- Items de navegación -->
+        <div class="header__items" id="header__items">
+          <a href="#favoritos" class="fas fa-heart"></a>
+          <a href="/Login/inicio_sesion.html" class="fas fa-user"></a>
+          <a href="#carrito" class="fas fa-shopping-cart"></a>
+        </div>
+      
+        <!-- Menú desplegable -->
+        <div id="myNav" class="header__menu">
+          <!-- Botón para cerrar el menú -->
+          <i class="fas fa-times header__menu-icon--close" onclick="toggleMenu()"></i>
+          <a href="jeans.html">Jeans</a>
+          <a href="oversizes.html">Oversizes</a>
+          <a href="camisetas.html">Camisetas</a>
+          <a href="camisas.html">Camisas</a>
+          <a href="polos.html">Polos</a>
+          <a href="shorts.html">Shorts</a>
+          <a href="sudaderas.html">Sudaderas</a>
+          <a href="chaquetas.html">Chaquetas</a>
+          <a href="gorras.html">Gorras</a>
+          <ul class="header__menu-redes">
+            <li><i class="fab fa-instagram fa-2x"></i></li>
+            <li><i class="fab fa-facebook fa-2x"></i></li>
+            <li><i class="fab fa-whatsapp fa-2x"></i> </li>
+          </ul>
+        </div>
+      </header>
+    
+    <main>
+        <div class="container">
+            <section class="images">
+                <img src="assets/image (1).webp" alt="calzado" class="image1">
+                <div class="images__container">
+                    <img src="assets/image (1).webp" alt="calzado" class="image image--select">
+                    <img src="assets/image (2).webp" alt="calzado" class="image">
+                    <img src="assets/image (3).webp" alt="calzado" class="image">
+                    <img src="assets/image (4).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).jpg" alt="calzado" class="image">
+                    <img src="assets/image (1).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).webp" alt="calzado" class="image">
+                    <img src="assets/image (4).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).jpg" alt="calzado" class="image">
+                    <img src="assets/image (1).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).webp" alt="calzado" class="image">
+                    <img src="assets/image (4).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).jpg" alt="calzado" class="image">
+                    <img src="assets/image (1).webp" alt="calzado" class="image">
+                    <img src="assets/image (2).webp" alt="calzado" class="image">
+                    <img src="assets/image (4).webp" alt="calzado" class="image">
+                </div>
+            </section>
+
+            <!-- CONTENEDOR DEL MODAL -->
+            <div id="miModal" class="modal">
+                <span id="cerrarModal" class="close">&times;</span>
+                <div id="contenedorImagen">
+                  <button id="anterior" class="navegacion"><i class="bi bi-chevron-left"></i></button>
+                  <img id="imagenEnModal">
+                  <button id="siguiente" class="navegacion"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <section class="content">
+                <article class="description">
+                    <span class="description__marca">RCRY ORIGINAL</span>
+                    <h2 class="description__title">CAMISETA LOCAL MANCHESTER UNITED 23/24 NIÑOS</h2>
+                    <p class="description__description">Jean para hombre. Tapered fit. Tono oscuro. De tiro bajo, amplio en cadera y muslo, ajustado desde la rodilla hasta la bota. Estilo cinco bolsillos. Ajuste con cierre y botón. Estilo cinco bolsillos. Ajuste con cierre y botón. Estilo cinco bolsillos. Ajuste con cierre y botón.</p>
+                    <span class="description__price">$349.950</span>
+                </article>
+
+                <article class="compra">
+                    <form action="" class="compra__form">
+                        <select class="compra__talla" name="" id="">
+                            <option value="" disabled selected hidden>Selecciona la Talla</option>
+                            <option value="">16</option>
+                            <option value="">S</option>
+                            <option value="">L</option>
+                            <option value="">XL</option>
+                        </select>
+                        <div class="compra__unidades">
+                            <div class="compra__contador">
+                                <span id="menosunid" class="menosunid"><i class="bi bi-dash"></i></span>
+                                <p id="unidades" class="unidades">1</p>
+                                <span id="masunid" class="masunid"><i class="bi bi-plus"></i></span>           
+                            </div>
+                            <button class="compra__send"><i class="bi bi-cart-check"></i>Añadir al Carrito</button>
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer></footer>
+    
+
+
+    <!-- SCRIPTS -->
+    <script>
+        document.querySelectorAll('.image').forEach(function(image){
+            image.onclick = function(){
+                const bigImage = document.querySelector('.image1');
+                bigImage.src = event.target.src;
+
+                document.querySelectorAll(".image--select").forEach(function(select){
+                    select.classList.remove("image--select")
+                })
+
+                image.classList.add("image--select");
+            }
+        })
+    </script>
+
+    <script>
+        let mas = document.getElementById("masunid")
+        let contador = document.getElementById("unidades")
+        let menos = document.getElementById("menosunid")
+
+        mas.addEventListener("click", function() {
+            let unidades = parseInt(contador.innerText);
+            contador.innerText = unidades + 1;
+        });
+
+        menos.addEventListener("click", function() {
+            let unidades = parseInt(contador.innerText);
+            if (unidades > 0) {
+                contador.innerText = unidades - 1;
+            }
+        });
+    </script>
+
+    <script>
+        const image1 = document.querySelector('.image1');
+        const imagenes = document.querySelectorAll('.image');
+        const modal = document.getElementById('miModal');
+        const modalImage = document.getElementById('imagenEnModal');
+        const cerrarModal = document.getElementById('cerrarModal');
+        const anterior = document.getElementById('anterior');
+        const siguiente = document.getElementById('siguiente');
+
+        let indiceActual = 0;
+
+        // Funcion para mostrar una imagen especifica en el modal
+        function mostrarImagen(src) {
+            modal.style.display = 'block';
+            modalImage.src = src;
+            // Buscar el indice de la imagen actual en el array de imágenes
+            indiceActual = Array.from(imagenes).findIndex(img => img.src === src);
+        }
+
+        // Mostrar el modal al hacer clic en image1
+        image1.addEventListener('click', () => mostrarImagen(image1.src));
+
+        // Cerrar el modal
+        cerrarModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Cerrar el modal si se hace clic fuera de la imagen
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+            modal.style.display = 'none';
+            }
+        });
+
+        // Navegar a la imagen anterior
+        anterior.addEventListener('click', function() {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            modalImage.src = imagenes[indiceActual].src;
+        });
+
+        // Navegar a la imagen siguiente
+        siguiente.addEventListener('click', function() {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            modalImage.src = imagenes[indiceActual].src;
+        });
+    </script>
+
+    <script>
+        document.querySelector(".menu__hamburguesa").addEventListener("click", animatebars)
+
+        let line1 = document.querySelector(".menu__line1")
+        let line2 = document.querySelector(".menu__line2")
+        let line3 = document.querySelector(".menu__line3")
+        let menu = document.querySelector(".header__list")
+        let modalanv = document.querySelector(".header__nav")
+
+        function animatebars(){
+            line1.classList.toggle("activemenu__line1")
+            line2.classList.toggle("activemenu__line2")
+            line3.classList.toggle("activemenu__line3")
+            menu.classList.toggle("header__list--active")
+            modalanv.classList.toggle("header__nav--active")
+            document.body.classList.toggle("body--disabled")
+        }
+
+        modalanv.addEventListener("click", function(cerramodal){
+            if (event.target === modalanv) {
+                line1.classList.remove("activemenu__line1")
+                line2.classList.remove("activemenu__line2")
+                line3.classList.remove("activemenu__line3")
+                menu.classList.remove("header__list--active")
+                modalanv.classList.remove("header__nav--active")
+                document.body.classList.toggle("body--disabled")
+            }
+        })
+
+    </script>
+
+    
+</body>
+</html>
