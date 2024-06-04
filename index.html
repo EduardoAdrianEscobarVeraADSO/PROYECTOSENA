@@ -27,9 +27,9 @@
 
   <!-- Items de navegación -->
   <div class="header__items" id="header__items">
-    <a href="#favoritos" class="fas fa-heart"></a>
+    <a href="likes/likes.html" class="fas fa-heart"></a>
     <a href="Login/inicio_sesion.html" class="fas fa-user"></a>
-    <a href="#carrito" class="fas fa-shopping-cart"></a>
+    <a href="cart/cart.html" class="fas fa-shopping-cart"></a>
   </div>
 
   <!-- Menú desplegable -->
@@ -45,18 +45,12 @@
           <a href="sections/sudaderas.html">Sudaderas</a>
           <a href="sections/chaquetas.html">Chaquetas</a>
           <a href="sections/gorras.html">Gorras</a>
+          <ul class="header__menu-redes">
+            <li><i class="fab fa-instagram fa-2x"></i></li>
+            <li><i class="fab fa-facebook fa-2x"></i></li>
+            <li><i class="fab fa-whatsapp fa-2x"></i> </li>
+          </ul>
   </div>
-   <!-- Menú desplegable search -->
-  <div id="searchNav" class="header__menu-search">
-    <!-- Botón para cerrar el menú -->
-    <i class="fas fa-times header__menu-search-icon--close" onclick="toggleMenuSearch()"></i>
-    <form class="search-form" onsubmit="event.preventDefault();" role="search">
-      <label class="search-form__label" for="search">Search for stuff</label>
-      <input class="search-form__input" id="search" type="search" placeholder="Search..." autofocus required />
-      <button class="search-form__button" type="submit"><a class="fas fa-search"></a></button>    
-    </form>
-  </div>
-  
 </header>
 <section>
   <div class="video-container">

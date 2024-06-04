@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CART.css">
+</head>
+<body>
+  <header class="header">
+    <!-- Icono para abrir el menú -->
+    <div class="header__menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  
+    <!-- Logo -->
+    <div class="header__logo">
+      <a href="../index.html"><img src="../img/logo.png" alt="Logo" id="logoImage"></a>
+    </div>
+  
+    <!-- Items de navegación -->
+    <div class="header__items" id="header__items">
+      <a href="../likes/likes.html" class="fas fa-heart"></a>
+      <a href="../Login/inicio_sesion.html" class="fas fa-user"></a>
+    </div>
+  
+    <!-- Menú desplegable -->
+    <div id="myNav" class="header__menu">
+      <!-- Botón para cerrar el menú -->
+      <i class="fas fa-times header__menu-icon--close" onclick="toggleMenu()"></i>
+      <a href="/sections/jeans.html">Jeans</a>
+          <a href="/sections/oversizes.html">Oversizes</a>
+          <a href="/sections/camisetas.html">Camisetas</a>
+          <a href="/sections/camisas.html">Camisas</a>
+          <a href="/sections/polos.html">Polos</a>
+          <a href="/sections/shorts.html">Shorts</a>
+          <a href="/sections/sudaderas.html">Sudaderas</a>
+          <a href="/sections/chaquetas.html">Chaquetas</a>
+          <a href="/sections/gorras.html">Gorras</a>
+      <ul class="header__menu-redes">
+        <li><i class="fab fa-instagram fa-2x"></i></li>
+        <li><i class="fab fa-facebook fa-2x"></i></li>
+        <li><i class="fab fa-whatsapp fa-2x"></i> </li>
+      </ul>
+    </div>
+  </header>
+    <main>
+        <section class="cart">
+            <h2>Tu Carrito</h2>
+            <div class="cart-item">
+                <div class="item-producto">Producto: Producto 1</div>
+                <div class="item-precio">Precio: $10.00</div>
+                <div class="item-cantidad">Cantidad: <input type="number" value="1" min="1"></div>
+                <div class="item-total">Total: $10.00</div>
+                <div class="item-acciones"><button class="remove-btn">Eliminar</button></div>
+            </div>
+            <div class="cart-item">
+              <div class="item-producto">Producto: Producto 1</div>
+              <div class="item-precio">Precio: $10.00</div>
+              <div class="item-cantidad">Cantidad: <input type="number" value="1" min="1"></div>
+              <div class="item-total">Total: $10.00</div>
+              <div class="item-acciones"><button class="remove-btn">Eliminar</button></div>
+          </div>
+            <div class="cart-summary">
+                <h3>Resumen del Pedido</h3>
+                <p>Subtotal: $10.00</p>
+                <p>Envío: $5.00</p>
+                <p>Total: $15.00</p>
+                <button class="checkout-btn">Proceder al Pago</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Exchange Corporation</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>

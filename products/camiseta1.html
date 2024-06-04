@@ -20,25 +20,25 @@
         </div>
       
         <!-- Items de navegación -->
-        <div class="header__items" id="header__items">
-          <a href="#favoritos" class="fas fa-heart"></a>
-          <a href="Login/inicio_sesion.html" class="fas fa-user"></a>
-          <a href="#carrito" class="fas fa-shopping-cart"></a>
-        </div>
+        <div class="/header__items" id="header__items">
+            <a href="/likes/likes.html" class="fas fa-heart"></a>
+            <a href="/Login/inicio_sesion.html" class="fas fa-user"></a>
+            <a href="/cart/cart.html" class="fas fa-shopping-cart"></a>
+          </div>
       
         <!-- Menú desplegable -->
         <div id="myNav" class="header__menu">
           <!-- Botón para cerrar el menú -->
           <i class="fas fa-times header__menu-icon--close" onclick="toggleMenu()"></i>
-          <a href="jeans.html">Jeans</a>
-          <a href="oversizes.html">Oversizes</a>
-          <a href="camisetas.html">Camisetas</a>
-          <a href="camisas.html">Camisas</a>
-          <a href="polos.html">Polos</a>
-          <a href="shorts.html">Shorts</a>
-          <a href="sudaderas.html">Sudaderas</a>
-          <a href="chaquetas.html">Chaquetas</a>
-          <a href="gorras.html">Gorras</a>
+          <a href="/sections/jeans.html">Jeans</a>
+          <a href="/sections/oversizes.html">Oversizes</a>
+          <a href="/sections/camisetas.html">Camisetas</a>
+          <a href="/sections/camisas.html">Camisas</a>
+          <a href="/sections/polos.html">Polos</a>
+          <a href="/sections/shorts.html">Shorts</a>
+          <a href="/sections/sudaderas.html">Sudaderas</a>
+          <a href="/sections/chaquetas.html">Chaquetas</a>
+          <a href="/sections/gorras.html">Gorras</a>
           <ul class="header__menu-redes">
             <li><i class="fab fa-instagram fa-2x"></i></li>
             <li><i class="fab fa-facebook fa-2x"></i></li>
@@ -112,122 +112,9 @@
         </div>
     </main>
 
-    <footer></footer>
-    
-
-
-    <!-- SCRIPTS -->
-    <script>
-        document.querySelectorAll('.image').forEach(function(image){
-            image.onclick = function(){
-                const bigImage = document.querySelector('.image1');
-                bigImage.src = event.target.src;
-
-                document.querySelectorAll(".image--select").forEach(function(select){
-                    select.classList.remove("image--select")
-                })
-
-                image.classList.add("image--select");
-            }
-        })
-    </script>
-
-    <script>
-        let mas = document.getElementById("masunid")
-        let contador = document.getElementById("unidades")
-        let menos = document.getElementById("menosunid")
-
-        mas.addEventListener("click", function() {
-            let unidades = parseInt(contador.innerText);
-            contador.innerText = unidades + 1;
-        });
-
-        menos.addEventListener("click", function() {
-            let unidades = parseInt(contador.innerText);
-            if (unidades > 0) {
-                contador.innerText = unidades - 1;
-            }
-        });
-    </script>
-
-    <script>
-        const image1 = document.querySelector('.image1');
-        const imagenes = document.querySelectorAll('.image');
-        const modal = document.getElementById('miModal');
-        const modalImage = document.getElementById('imagenEnModal');
-        const cerrarModal = document.getElementById('cerrarModal');
-        const anterior = document.getElementById('anterior');
-        const siguiente = document.getElementById('siguiente');
-
-        let indiceActual = 0;
-
-        // Funcion para mostrar una imagen especifica en el modal
-        function mostrarImagen(src) {
-            modal.style.display = 'block';
-            modalImage.src = src;
-            // Buscar el indice de la imagen actual en el array de imágenes
-            indiceActual = Array.from(imagenes).findIndex(img => img.src === src);
-        }
-
-        // Mostrar el modal al hacer clic en image1
-        image1.addEventListener('click', () => mostrarImagen(image1.src));
-
-        // Cerrar el modal
-        cerrarModal.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-
-        // Cerrar el modal si se hace clic fuera de la imagen
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-            modal.style.display = 'none';
-            }
-        });
-
-        // Navegar a la imagen anterior
-        anterior.addEventListener('click', function() {
-            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-            modalImage.src = imagenes[indiceActual].src;
-        });
-
-        // Navegar a la imagen siguiente
-        siguiente.addEventListener('click', function() {
-            indiceActual = (indiceActual + 1) % imagenes.length;
-            modalImage.src = imagenes[indiceActual].src;
-        });
-    </script>
-
-    <script>
-        document.querySelector(".menu__hamburguesa").addEventListener("click", animatebars)
-
-        let line1 = document.querySelector(".menu__line1")
-        let line2 = document.querySelector(".menu__line2")
-        let line3 = document.querySelector(".menu__line3")
-        let menu = document.querySelector(".header__list")
-        let modalanv = document.querySelector(".header__nav")
-
-        function animatebars(){
-            line1.classList.toggle("activemenu__line1")
-            line2.classList.toggle("activemenu__line2")
-            line3.classList.toggle("activemenu__line3")
-            menu.classList.toggle("header__list--active")
-            modalanv.classList.toggle("header__nav--active")
-            document.body.classList.toggle("body--disabled")
-        }
-
-        modalanv.addEventListener("click", function(cerramodal){
-            if (event.target === modalanv) {
-                line1.classList.remove("activemenu__line1")
-                line2.classList.remove("activemenu__line2")
-                line3.classList.remove("activemenu__line3")
-                menu.classList.remove("header__list--active")
-                modalanv.classList.remove("header__nav--active")
-                document.body.classList.toggle("body--disabled")
-            }
-        })
-
-    </script>
-
-    
+    <footer>
+        <p>&copy; 2024 Exchange Corporation </p>
+    </footer>
+    <script src="products.js"></script>
 </body>
 </html>

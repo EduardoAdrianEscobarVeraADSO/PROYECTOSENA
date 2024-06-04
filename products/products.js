@@ -36,5 +36,113 @@ function handleVisibilityChange() {
   }
 }
 
-// Agrega un evento para detectar cambios de visibilidad de la pestaña
-document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        document.querySelectorAll('.image').forEach(function(image){
+            image.onclick = function(){
+                const bigImage = document.querySelector('.image1');
+                bigImage.src = event.target.src;
+
+                document.querySelectorAll(".image--select").forEach(function(select){
+                    select.classList.remove("image--select")
+                })
+
+                image.classList.add("image--select");
+            }
+        })
+    
+
+    
+        let mas = document.getElementById("masunid")
+        let contador = document.getElementById("unidades")
+        let menos = document.getElementById("menosunid")
+
+        mas.addEventListener("click", function() {
+            let unidades = parseInt(contador.innerText);
+            contador.innerText = unidades + 1;
+        });
+
+        menos.addEventListener("click", function() {
+            let unidades = parseInt(contador.innerText);
+            if (unidades > 0) {
+                contador.innerText = unidades - 1;
+            }
+        });
+    
+
+    
+        const image1 = document.querySelector('.image1');
+        const imagenes = document.querySelectorAll('.image');
+        const modal = document.getElementById('miModal');
+        const modalImage = document.getElementById('imagenEnModal');
+        const cerrarModal = document.getElementById('cerrarModal');
+        const anterior = document.getElementById('anterior');
+        const siguiente = document.getElementById('siguiente');
+
+        let indiceActual = 0;
+
+        // Funcion para mostrar una imagen especifica en el modal
+        function mostrarImagen(src) {
+            modal.style.display = 'block';
+            modalImage.src = src;
+            // Buscar el indice de la imagen actual en el array de imágenes
+            indiceActual = Array.from(imagenes).findIndex(img => img.src === src);
+        }
+
+        // Mostrar el modal al hacer clic en image1
+        image1.addEventListener('click', () => mostrarImagen(image1.src));
+
+        // Cerrar el modal
+        cerrarModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Cerrar el modal si se hace clic fuera de la imagen
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+            modal.style.display = 'none';
+            }
+        });
+
+        // Navegar a la imagen anterior
+        anterior.addEventListener('click', function() {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            modalImage.src = imagenes[indiceActual].src;
+        });
+
+        // Navegar a la imagen siguiente
+        siguiente.addEventListener('click', function() {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+            modalImage.src = imagenes[indiceActual].src;
+        });
+    
+
+    
+        document.querySelector(".menu__hamburguesa").addEventListener("click", animatebars)
+
+        let line1 = document.querySelector(".menu__line1")
+        let line2 = document.querySelector(".menu__line2")
+        let line3 = document.querySelector(".menu__line3")
+        let menu = document.querySelector(".header__list")
+        let modalanv = document.querySelector(".header__nav")
+
+        function animatebars(){
+            line1.classList.toggle("activemenu__line1")
+            line2.classList.toggle("activemenu__line2")
+            line3.classList.toggle("activemenu__line3")
+            menu.classList.toggle("header__list--active")
+            modalanv.classList.toggle("header__nav--active")
+            document.body.classList.toggle("body--disabled")
+        }
+
+        modalanv.addEventListener("click", function(cerramodal){
+            if (event.target === modalanv) {
+                line1.classList.remove("activemenu__line1")
+                line2.classList.remove("activemenu__line2")
+                line3.classList.remove("activemenu__line3")
+                menu.classList.remove("header__list--active")
+                modalanv.classList.remove("header__nav--active")
+                document.body.classList.toggle("body--disabled")
+            }
+        })
+
+    

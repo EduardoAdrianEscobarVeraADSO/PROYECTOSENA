@@ -185,6 +185,21 @@ body{
   transition: color 0.5s ease; /* Suaviza la transición del color del texto */
 }
 
+.header__menu-redes{
+  color: #818181;
+  list-style: none;
+  display: flex;
+  margin-top: 20px;
+  
+}
+.fa-instagram, .fa-facebook, .fa-whatsapp{
+  width:44px;
+  height: auto;
+  padding-left: 10px;
+}
+.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
+color: #fff;
+}
 
 #logoImage {
   transition: opacity 0.5s ease; /* Suaviza la transición de opacidad para el cambio de imagen */
