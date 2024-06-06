@@ -63,3 +63,13 @@ function handleVisibilityChange() {
 
 // Agrega un evento para detectar cambios de visibilidad de la pestaña
 document.addEventListener('visibilitychange', handleVisibilityChange);
+
+document.addEventListener('scroll', function() {
+    var tendenciasSection = document.querySelector('.tendencias');
+    var tendenciasPosition = tendenciasSection.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight;
+
+    if (tendenciasPosition < screenPosition) {
+        tendenciasSection.classList.add('tendencias--visible');
+    }
+});

@@ -3,6 +3,11 @@ body{
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+::selection{
+  background-color: #212121;
+  color: white;
+  transition: 1s ease;
+}
 .header {
     display: flex;
     justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
@@ -255,7 +260,6 @@ body{
 
 .description__marca{
     font-size: 18px;
-    font-family: cursive;
 }
 
 .description__title{
@@ -308,13 +312,14 @@ body{
     display: flex;
     gap: 70px;
     align-items: center;
+    color: white;
 }
 
 .compra__contador{
     display: flex;
     gap: 10px;
     font-size: 20px;
-    background-color: lightgrey;
+    background-color: rgb(28, 27, 27);
     border-radius: 10px;
     align-items: center;
     justify-content: space-around;
@@ -331,11 +336,11 @@ body{
     font-weight: 900;
     padding: 10px 10px;
     cursor: pointer;
-    color: darkblue;
+    color: rgb(255, 255, 255);
 }
 
 .compra__send{
-    background-color: lightskyblue;
+    background-color: rgb(24, 23, 23);
     padding: 20px 40px;
     border-radius: 10px;
     border: 0;
@@ -345,6 +350,7 @@ body{
     font-weight: 500;
     cursor: pointer;
     transition: all .5s ease;
+    color: white;
 }
 
 .compra__send:hover{
