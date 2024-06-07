@@ -1,112 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(/components/header.css);
+@import url(/global__var/styles.css);
 body{
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 ::selection{
   background-color: #212121;
-  color: white;
+  color: var(--secondary__color);
   transition: 1s ease;
 }
-.header {
-    display: flex;
-    justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
-    align-items: center;
-    padding: 10px 30px; /* Reduce el padding si es necesario */
-    background-color: white;
-    position: -webkit-sticky; /* Para la compatibilidad con algunos navegadores */
-    position: sticky;
-    top: 0; 
-    width: 96%;
-    z-index: 1;
-  }
-  
-  .header__menu-icon {
-    border: none;
-    background: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-  }
-  
-  .header__logo img {
-    width: 180px; /* Ajusta el tamaño del logo si es necesario */
-    height: auto;
-  }
-  
-  .header__items {
-    display: flex; /* Utiliza flexbox para alinear los ítems */
-    align-items: center; /* Alinea los ítems verticalmente */
-    
-  }
-  
-  .header__items a {
-    color: rgb(0, 0, 0);
-    font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
-    padding: 0 10px; /* Ajusta el padding entre íconos */
-    text-decoration: none;
-    
-  }
-  
-  .fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
-    width: 20px;
-    height: 20px;
-    text-decoration: none;
-    color: #111;
-  }
-
-  .header__menu {
-    height: 100vh;
-    width: 0;
-    position: fixed;
-    z-index: 2; 
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 80px;
-    
-  }
-  
-  .header__menu a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    
-  }
-  
-  .header__menu a:hover {
-    color: #f1f1f1;
-  }
-  .header__menu-icon--close {
-    font-size: 36px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    right: 25px;
-    cursor: pointer;
-    margin-top: 25px;
-  }
-  
-  .header__menu-redes{
-    color: #818181;
-    list-style: none;
-    display: flex;
-    margin-top: 20px;
-    
-  }
-  .fa-instagram, .fa-facebook, .fa-whatsapp{
-    width:44px;
-    height: auto;
-    padding-left: 10px;
-  }
-  .fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
-  color: #fff;
- }
 
   /* main */
   .filter {
@@ -120,9 +23,9 @@ body{
 
 .filter__container {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--secondary__color);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--principal__color);
 }
 
 .filter__item {
@@ -139,7 +42,7 @@ body{
 .filter__item input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray__color);
   border-radius: 5px;
   box-sizing: border-box;
 }
@@ -159,17 +62,17 @@ body{
 }
 
 .products__item {
-    background-color: #fff; /* Cambia el color de fondo */
+    background-color: var(--secondary__color); /* Cambia el color de fondo */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    box-shadow: 0 2px 4px var(--light__gray); /* Agrega una sombra suave */
     transition: box-shadow 0.3s ease; /* Agrega una transición suave para el efecto de hover */
     transition: transform 0.3s ease;
 }
 
 
 .products__item:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en el hover */
+    box-shadow: 0 4px 8px rgb(189, 189, 189); /* Aumenta la sombra en el hover */
     transform: scale(1.1);
 }
 
@@ -188,6 +91,6 @@ body{
 
 .products__price {
     font-size: 16px;
-    color: #333;
+    color: var(--light__black);
     text-align: center;
 }

@@ -1,113 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(/global__var/styles.css);
+@import url(/components/header.css);
+
 body{
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
 ::selection{
-  background-color: #212121;
-  color: white;
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
   transition: 1s ease;
 }
-.header {
-    display: flex;
-    justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
-    align-items: center;
-    padding: 10px 30px; /* Reduce el padding si es necesario */
-    background-color: white;
-    position: -webkit-sticky; /* Para la compatibilidad con algunos navegadores */
-    position: sticky;
-    top: 0; 
-    width: 96%;
-    z-index: 1;
-  }
-  
-  .header__menu-icon {
-    border: none;
-    background: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-  }
-  
-  .header__logo img {
-    width: 180px; /* Ajusta el tamaño del logo si es necesario */
-    height: auto;
-  }
-  
-  .header__items {
-    display: flex; /* Utiliza flexbox para alinear los ítems */
-    align-items: center; /* Alinea los ítems verticalmente */
-    
-  }
-  
-  .header__items a {
-    color: rgb(0, 0, 0);
-    font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
-    padding: 0 10px; /* Ajusta el padding entre íconos */
-    text-decoration: none;
-    
-  }
-  
-  .fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
-    width: 20px;
-    height: 20px;
-    text-decoration: none;
-    color: #111;
-  }
-
-  .header__menu {
-    height: 100vh;
-    width: 0;
-    position: fixed;
-    z-index: 2; 
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 80px;
-    
-  }
-  
-  .header__menu a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    
-  }
-  
-  .header__menu a:hover {
-    color: #f1f1f1;
-  }
-  .header__menu-icon--close {
-    font-size: 36px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    right: 25px;
-    cursor: pointer;
-    margin-top: 25px;
-  }
-  
-  .header__menu-redes{
-    color: #818181;
-    list-style: none;
-    display: flex;
-    margin-top: 20px;
-    
-  }
-  .fa-instagram, .fa-facebook, .fa-whatsapp{
-    width:44px;
-    height: auto;
-    padding-left: 10px;
-  }
-  .fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
-  color: #fff;
- }
-
 /* CUERPO */
 .container{
     display: flex;
@@ -167,7 +70,7 @@ body{
 }
   
 .images__container::-webkit-scrollbar-thumb {
-    background-color: rgba(128, 128, 128, .5);
+    background-color: var(--gray__color);
 }
 
 .image--select{
@@ -187,7 +90,7 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--principal__color);
     z-index: 5;
 }
 
@@ -204,11 +107,11 @@ body{
     position: absolute;
     top: 35px;
     right: 35px;
-    color: black;
+    color: var(--principal__color);
     font-size: 30px;
     cursor: pointer;
     z-index: 6;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: var(--gray__color);
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -221,7 +124,7 @@ body{
     position: absolute;
     top: 50%;
     font-size: 25px;
-    color: black;
+    color: var(--principal__color);
     background: none;
     border: none;
     cursor: pointer;
@@ -231,7 +134,7 @@ body{
 
 #anterior {
     left: 10%;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: var(--gray__color);
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -242,7 +145,7 @@ body{
   
 #siguiente {
     right: 10%;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: var(--gray__color);
     border-radius: 100%;
     width: 40px;
     height: 40px;
@@ -285,8 +188,8 @@ body{
 
 .compra__talla {
     appearance: none; 
-    background-color: #f4f4f4; 
-    border: 1px solid #d4d4d4; 
+    background-color: var(--secondary__color); 
+    border: 1px solid var(--principal__color); 
     border-radius: 4px; 
     padding: 10px 50px 10px 15px; 
     font-size: 16px; 
@@ -297,29 +200,25 @@ body{
 }
   
 .compra__talla:focus {
-    border: 1px solid lightgray;
+    border: 1px solid var(--gray__color);
     outline: 0;
     
 }
 
-.compra__talla option:hover{
-    background-color: rgba(0, 0, 0, 0.2);
-    color: green;
 
-}
   
 .compra__unidades{
     display: flex;
     gap: 70px;
     align-items: center;
-    color: white;
+    color: var(--secondary__color);
 }
 
 .compra__contador{
     display: flex;
     gap: 10px;
     font-size: 20px;
-    background-color: rgb(28, 27, 27);
+    background-color: var(--principal__color);
     border-radius: 10px;
     align-items: center;
     justify-content: space-around;
@@ -336,11 +235,11 @@ body{
     font-weight: 900;
     padding: 10px 10px;
     cursor: pointer;
-    color: rgb(255, 255, 255);
+    color: var(--secondary__color);
 }
 
 .compra__send{
-    background-color: rgb(24, 23, 23);
+    background-color: var(--principal__color);
     padding: 20px 40px;
     border-radius: 10px;
     border: 0;
@@ -350,13 +249,22 @@ body{
     font-weight: 500;
     cursor: pointer;
     transition: all .5s ease;
-    color: white;
+    color: var(--secondary__color);
 }
 
 .compra__send:hover{
     filter: brightness(80%);
 }
 
+footer {
+    background-color: var(--gray__color);
+    color: var(--secondary__color);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
 
 
 
@@ -433,15 +341,6 @@ body{
     }
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
 
 @media screen and (max-width: 950px){
 
@@ -467,9 +366,9 @@ footer {
         right: 0;
         justify-content: flex-start;
         gap: 40px;
-        background-color: white;
+        background-color: var(--secondary__color);
         width: 200px;
-        box-shadow:  0 0 0 100vmax rgba(0, 0, 0, .5);
+        box-shadow:  0 0 0 100vmax var(--principal__color);
         height: 100%;
         z-index: 1;
         margin: 0;

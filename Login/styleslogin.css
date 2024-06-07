@@ -1,3 +1,4 @@
+@import url(/global__var/styles.css);
 * {
   padding: 0;
   margin: 0;
@@ -14,14 +15,14 @@ body {
 }
 
 ::selection{
-  background-color: #212121;
-  color: white;
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
   transition: 1s ease;
 }
 .container-form {
   display: flex;
   border-radius: 20px;
-  box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+  box-shadow: 0 5px 7px var(--color__gray);
   height: 500px;
   max-width: 900px;
   transition: all 1s ease;
@@ -33,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: #ffffff00;
+  background-color: var(--principal__color);
   backdrop-filter: blur(10px);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -46,30 +47,30 @@ body {
 
 .info-childs h2 {
   font-size: 2.5rem;
-  color: #ffffff;
+  color: var(--secondary__color);
 }
 
 .info-childs p {
   margin:50px 0 ;
-  color: #ffffff;
+  color: var(--secondary__color);
 }
 
 .info-childs input {
   background-color: transparent;
   outline: none;
-  border: solid 2px #fffdfd;
+  border: solid 2px var(--secondary__color);
   border-radius: 20px;
   padding: 10px 20px;
-  color: #ffffff;
+  color: var(--secondary__color);
   cursor: pointer;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .info-childs input:hover {
-  background-color: #000000;
+  background-color: var(--principal__color);
   border: none;
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  color: var(--secondary__color);
+  box-shadow: 0 2px 5px var(--principal__color);
 }
 
 .form-information {
@@ -78,7 +79,7 @@ body {
   justify-content: center;
   width: 60%;
   text-align: center;
-  background-color: #333131;
+  background-color: var(--light__black);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -88,12 +89,12 @@ body {
 }
 
 .form-information-childs h2 {
-  color: #ffffff;
+  color: var(--secondary__color);
   font-size: 2rem;
 }
 
 .form-information-childs p {
-  color: #fcfbfb;
+  color: var(--secondary__color);
 }
 
 .icons {
@@ -105,15 +106,15 @@ body {
   padding: 15px;
   cursor: pointer;
   margin: 0 10px;
-  color: #ffffff;
-  border: solid thin #ffffff;
+  color: var(--secondary__color);
+  border: solid thin var(--secondary__color);
   transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px var(--color__gray);
 }
 
 .icons i:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--secondary__color);
+  color: var(--principal__color);
 }
 
 .form {
@@ -126,52 +127,52 @@ body {
   margin-bottom: 15px;
   border-radius: 20px;
   padding: 0 10px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  background-color: var(--secondary__color);
+  box-shadow: 0 2px 5px var(--color__gray);
 }
 
 .form label input {
   width: 100%;
   padding: 10px;
-  background-color: #fff;
+  background-color: var(--secondary__color);
   border: none;
   outline: none;
   border-radius: 20px;
-  color: #333;
+  color: var(--color__gray);
 }
 
 .form label i {
-  color: #a7a7a7;
+  color: var(--light__gray);
 }
 
 .form input[type="submit"] {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--secondary__color);
+  color: var(--principal__color);
   border-radius: 20px;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
   margin-top: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px var(--color__gray);
 }
 .regresar__home{
-  background-color: #ffffff;
-  color: #000000;
+  background-color: var(--secondary__color);
+  color: var(--principal__color);
   border-radius: 20px;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
   margin-top: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px var(--color__gray);
   text-decoration: none;
 }
 .regresar__home:hover{
-  background-color: #000000;
-  color: rgb(255, 255, 255);
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
 }
 .form input[type="submit"]:hover {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
 }
 
 .hide {
