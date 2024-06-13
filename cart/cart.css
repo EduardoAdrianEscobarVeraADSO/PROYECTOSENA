@@ -80,17 +80,6 @@ main {
     cursor: pointer;
     border-radius: 4px;
 }
-
-footer {
-    background-color: var(--light__black);
-    color: var(--secondary__color);
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
 /* Media Queries */
 @media (max-width: 600px) {
     .cart-item {

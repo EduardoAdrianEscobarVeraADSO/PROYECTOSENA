@@ -1,17 +1,21 @@
 @import url(/global__var/styles.css);
 .header {
     display: flex;
-    justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
+    justify-content: space-between; 
     align-items: center;
-    padding: 10px 30px; /* Reduce el padding si es necesario */
+    padding: 10px; 
     background-color: white;
-    position: -webkit-sticky; /* Para la compatibilidad con algunos navegadores */
+    position: -webkit-sticky; 
     position: sticky;
     top: 0; 
     width: 96%;
     z-index: 1;
   }
-  
+  ::selection{
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
+  transition: 1s ease;
+  } 
   .header__menu-icon {
     border: none;
     background: none;
@@ -43,7 +47,7 @@
     width: 20px;
     height: 20px;
     text-decoration: none;
-    color: var(--principal__color);
+    
   }
 
   .header__menu {
@@ -86,15 +90,44 @@
   .header__menu-redes{
     color: var(--gray__color);
     list-style: none;
-    display: flex;
-    margin-top: 20px;
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; 
+    padding-top: 10px;
+    margin-top: 30px;
   }
   .fa-instagram, .fa-facebook, .fa-whatsapp{
     width:44px;
     height: auto;
-    padding-left: 10px;
   }
-  .fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
-  color: var(--secondary__color);
- }
+  .fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover, .fa-search:hover, .fa-heart:hover, .fa-user:hover, .fa-shopping-cart:hover{
+    color: var(--secondary__color);
+  }
+  #myNav .header__menu-redes li:nth-last-child(-n+2) {
+    display: none;
+    
+  }
+
+  @media (max-width: 500px) {
+    .header{
+      padding: 10px;
+    }
+  .header__logo {
+    text-align: center;
+    width: 100%; /* Ajustamos el ancho del contenedor del logo */
+  }
+
+  .header__logo img {
+    margin: 0 auto;
+  }
+
+  .header__items {
+    display: none;
+  }
+  #myNav .header__menu-redes li:nth-last-child(-n+2) {
+    display: block;
+    margin-top: 10px;
+    color: var(--gray__color);
+  }
+
+}

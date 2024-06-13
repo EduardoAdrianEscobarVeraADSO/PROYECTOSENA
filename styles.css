@@ -4,7 +4,11 @@ body{
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-
+::selection{
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
+  transition: 1s ease;
+}
 .header {
   display: flex;
   justify-content: space-between; /* Asegura que los elementos se distribuyan en los extremos del contenedor */
@@ -27,6 +31,7 @@ body{
 .header__logo img {
   width: 180px; /* Ajusta el tamaño del logo si es necesario */
   height: auto;
+  margin-left: 90px;
 }
 
 .header__items {
@@ -116,17 +121,21 @@ body{
 .header__menu-redes{
   color: var(--gray__color);
   list-style: none;
-  display: flex;
-  margin-top: 20px;
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px; 
+  padding-top: 10px;
+  margin-top: 30px;
 }
 .fa-instagram, .fa-facebook, .fa-whatsapp{
   width:44px;
   height: auto;
-  padding-left: 10px;
 }
-.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
+.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover, .fa-search:hover, .fa-heart:hover, .fa-user:hover, .fa-shopping-cart:hover{
   color: var(--secondary__color);
+}
+#myNav .header__menu-redes li:nth-last-child(-n+3) {
+  display: none;
 }
 #logoImage {
   transition: opacity 0.5s ease; /* Suaviza la transición de opacidad para el cambio de imagen */
@@ -145,58 +154,93 @@ body{
 
 /* Estilos para la sección de tendencias */
 .tendencias {
-    padding: 20px;
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .tendencias h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 .tendencias__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
 .tendencias__item {
-    background-color: var(--secondary__color);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--light__black);
-    transition: box-shadow 0.3s ease;
+  background-color: var(--secondary__color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--light__black);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tendencias__item--large {
+  grid-column: span 2; /* Ocupa dos columnas en la cuadrícula */
 }
 
 .tendencias__item:hover {
-    box-shadow: 0 4px 8px var(--light__black);
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px var(--light__black);
 }
 
 .tendencias__item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
 .tendencias__title {
-    font-size: 18px;
-    margin-bottom: 5px;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
 .tendencias__price {
-    font-size: 16px;
-    color: var(--light__black);
+  font-size: 16px;
+  color: var(--light__black);
 }
 
-/* Animación de aparición al hacer scroll */
 .tendencias--hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .tendencias--visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 600px) {
+  .tendencias__container {
+    grid-template-columns: 1fr; /* Una columna para móviles */
+  }
+
+  .tendencias__item--large {
+    grid-column: span 1; /* Cada item ocupa una columna en móviles */
+  }
+}
+
+@media (max-width: 500px) {
+  .header__logo {
+    text-align: center;
+    width: 100%; /* Ajustamos el ancho del contenedor del logo */
+    margin-right: 70px;
+  }
+
+  .header__logo img {
+    margin: 0 auto;
+  }
+
+  .header__items {
+    display: none;
+  }
+  #myNav .header__menu-redes li:nth-last-child(-n+3) {
+    display: block;
+    margin-top: 10px;
+  }
 }

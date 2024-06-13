@@ -73,3 +73,5 @@ document.addEventListener('scroll', function() {
         tendenciasSection.classList.add('tendencias--visible');
     }
 });
+
+

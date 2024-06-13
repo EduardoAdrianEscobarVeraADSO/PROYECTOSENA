@@ -34,7 +34,6 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: var(--principal__color);
   backdrop-filter: blur(10px);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -165,6 +164,7 @@ body {
   margin-top: 10px;
   box-shadow: 0 2px 5px var(--color__gray);
   text-decoration: none;
+  font-size: 14px;
 }
 .regresar__home:hover{
   background-color: var(--principal__color);
