@@ -130,7 +130,7 @@
   text-decoration: none;
   width: 44px;
 }
-.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover, .fa-search:hover, .fa-heart:hover, .fa-user:hover, .fa-shopping-cart:hover{
+.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
   color: var(--secondary__color);
 }
 #myNav .header__menu-redes li:nth-last-child(-n+3) {
