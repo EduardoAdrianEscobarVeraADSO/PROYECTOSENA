@@ -16,7 +16,7 @@ btnSignUp.addEventListener("click", e => {
 
 
 const nombre = document.getElementById("userName");
-const correoInput = document.getElementById("userEmail");
+const correoInput = document.querySelector("#userEmail");
 
 
 

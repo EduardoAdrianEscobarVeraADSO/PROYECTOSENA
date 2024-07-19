@@ -124,33 +124,4 @@ function handleVisibilityChange() {
         });
     
 
-    
-        document.querySelector(".menu__hamburguesa").addEventListener("click", animatebars)
 
-        let line1 = document.querySelector(".menu__line1")
-        let line2 = document.querySelector(".menu__line2")
-        let line3 = document.querySelector(".menu__line3")
-        let menu = document.querySelector(".header__list")
-        let modalanv = document.querySelector(".header__nav")
-
-        function animatebars(){
-            line1.classList.toggle("activemenu__line1")
-            line2.classList.toggle("activemenu__line2")
-            line3.classList.toggle("activemenu__line3")
-            menu.classList.toggle("header__list--active")
-            modalanv.classList.toggle("header__nav--active")
-            document.body.classList.toggle("body--disabled")
-        }
-
-        modalanv.addEventListener("click", function(cerramodal){
-            if (event.target === modalanv) {
-                line1.classList.remove("activemenu__line1")
-                line2.classList.remove("activemenu__line2")
-                line3.classList.remove("activemenu__line3")
-                menu.classList.remove("header__list--active")
-                modalanv.classList.remove("header__nav--active")
-                document.body.classList.toggle("body--disabled")
-            }
-        })
-
-    
