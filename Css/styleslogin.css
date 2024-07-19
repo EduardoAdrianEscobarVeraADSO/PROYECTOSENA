@@ -189,7 +189,16 @@ body {
   z-index: -10000; /* Para que el video esté detrás del contenido */
 }
 
-
+.correcto{
+  border: 1px solid green;
+}
+.incorrecto{
+  border-color: 1px solid red;
+}
+.ErrorSpan{
+  color: red;
+  font-size: 12px;
+}
 
 /*RESPONSIVE FORM*/
 

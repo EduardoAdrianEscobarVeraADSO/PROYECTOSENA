@@ -34,11 +34,11 @@ function alternateTitles() {
 // Variable para almacenar el temporizador
 let intervalId;
 
-// Función para manejar el cambio de visibilidad de la pestaña
+// Funcion para manejar el cambio de visibilidad de la pestaña
 function handleVisibilityChange() {
   if (document.hidden) {
-    // Si la pestaña está oculta, comienza a alternar los títulos
-    intervalId = setInterval(alternateTitles, 200); // Cambia cada 2 segundos (2000 milisegundos)
+    // Si la pestaña está oculta, comienza a alternar los titulos
+    intervalId = setInterval(alternateTitles, 200); // Cambia cada 2 segundos
   } else {
     // Si la pestaña vuelve a estar visible, detén la alternancia de títulos y restaura el título original
     clearInterval(intervalId);
