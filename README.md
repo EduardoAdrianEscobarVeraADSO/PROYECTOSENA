@@ -4,9 +4,9 @@ Este es el repositorio del proyecto **Exchange**. Para que el proyecto funcione 
 
 ## Requisitos previos
 
-Antes de comenzar, asegúrate de tener instalado lo siguiente:
+Antes de comenzar, asegurese de tener instalado lo siguiente:
 
-- [MySQL](https://www.mysql.com/downloads/) o cualquier otro sistema de gestión de bases de datos que estés utilizando.
+- [MySQL](https://www.mysql.com/downloads/) o cualquier otro sistema de gestión de bases de datos que este utilizando.
 - [Java JDK](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html) (si el proyecto es en Java).
 - [Apache Maven](https://maven.apache.org/install.html) (si estás utilizando Maven).
 
