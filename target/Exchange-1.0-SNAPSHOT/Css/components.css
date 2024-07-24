@@ -1,0 +1,170 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/06/2024, 1:05:22 p. m.
+    Author     : Propietario
+*/
+
+@import url(global.css);
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-top: 10px;
+    background-color: var(--secondary__color);
+    position: sticky;
+    top: 0; 
+    width: 100%;
+    z-index: 1;
+    font-family: "Poppins", sans-serif; 
+  }
+  ::selection{
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
+  transition: 1s ease;
+  } 
+  .header__menu-icon {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--principal__color);
+    margin-left: 20px;
+  }
+  
+  .header__logo img {
+    width: 180px; /* Ajusta el tamaño del logo si es necesario */
+    height: auto;
+  }
+  
+  .header__items {
+    display: flex; /* Utiliza flexbox para alinear los ítems */
+    align-items: center; /* Alinea los ítems verticalmente */
+    
+  }
+  
+  .header__items a {
+    color: var(--principal__color);
+    font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario */
+    padding: 0 10px; /* Ajusta el padding entre íconos */
+    text-decoration: none;
+    
+  }
+  
+  .fa-search, .fa-heart, .fa-user, .fa-shopping-cart {
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    
+  }
+
+  .header__menu {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 2; 
+  top: 0;
+  left: 0;
+  background-color: var(--principal__color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 80px;
+  
+}
+
+.products__item{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--gray__color);
+  display: block;
+  transition: 0.3s;
+  
+}
+
+.header__menu a:hover {
+  color: var(--secondary__color);
+}
+
+.header__menu-icon--close {
+  font-size: 36px;
+  color: var(--secondary__color);
+  position: absolute;
+  top: 0;
+  right: 25px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+
+
+
+.header__menu-search-icon--close {
+  font-size: 36px;
+  color: var(--principal__color);
+  position: absolute;
+  top: 0;
+  right: 25px;
+  cursor: pointer;
+  margin: 25px 25px 0 0;
+}
+
+/* Cuando el menú está abierto */
+.header__menu--open {
+  width: 2500px;
+}
+
+
+.header__menu-icon, .header__items a {
+  transition: color 0.5s ease; /* Suaviza la transición del color del texto */
+}
+
+.header__menu-redes{
+  color: var(--gray__color);
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px; 
+  padding-top: 10px;
+  margin-top: 30px;
+}
+.fa-instagram, .fa-facebook, .fa-whatsapp{
+  width:44px;
+  height: auto;
+}
+.fa-instagram, .fa-facebook, .fa-whatsapp, .fa-search, .fa-heart, .fa-user, .fa-shopping-cart{
+  color: var(--gray__color);
+  text-decoration: none;
+  width: 44px;
+}
+.fa-instagram:hover, .fa-facebook:hover, .fa-whatsapp:hover{
+  color: var(--secondary__color);
+}
+#myNav .header__menu-redes li:nth-last-child(-n+3) {
+  display: none;
+}
+
+  @media (max-width: 500px) {
+    .header{
+      padding-bottom: 10px;
+    }
+  .header__logo {
+    text-align: center;
+    width: 100%; /* Ajustamos el ancho del contenedor del logo */
+
+  }
+
+ 
+  .header__items {
+    display: none;
+  }
+  #myNav .header__menu-redes li:nth-last-child(-n+3) {
+    display: block;
+    margin-top: 10px;
+    color: var(--gray__color);
+  }
+
+}

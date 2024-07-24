@@ -1,0 +1,129 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/06/2024, 1:05:51 p. m.
+    Author     : Propietario
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(components.css);
+@import url(global.css);
+body{
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+::selection{
+  background-color: #212121;
+  color: var(--secondary__color);
+  transition: 1s ease;
+}
+
+  /* main */
+  .filter {
+  width: 15vw;
+  max-width: 300px;
+  float: right;
+  margin-top: 25px;
+  margin-right: 10px;
+  /* Ajusta los estilos según sea necesario */
+}
+
+.filter__container {
+  padding: 20px;
+  background-color: var(--secondary__color);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--principal__color);
+}
+
+.filter__item {
+  margin-bottom: 20px;
+}
+
+.filter__item label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter__item select,
+.filter__item input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--gray__color);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Ajusta más estilos según necesites */
+
+.products__container{
+    display: grid;
+    place-items: center;
+}
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px; /* Aumenta el espacio entre los productos */
+    margin-top: 20px;
+    width: 90%;
+}
+
+.item__container {
+    background-color: var(--secondary__color); /* Cambia el color de fondo */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--light__gray); /* Agrega una sombra suave */
+    transition: box-shadow 0.3s ease; /* Agrega una transición suave para el efecto de hover */
+    transition: transform 0.3s ease;
+}
+
+
+.item__container:hover {
+    box-shadow: 0 4px 8px rgb(189, 189, 189); /* Aumenta la sombra en el hover */
+    transform: scale(1.1);
+}
+
+.item__container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px; /* Aumenta el espacio entre la imagen y el título */
+    border-radius: 10px;
+}
+
+.products__title {
+    font-size: 18px; /* Aumenta el tamaño del título */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.products__price {
+    font-size: 16px;
+    color: var(--light__black);
+    text-align: center;
+}
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .filter {
+    width: 100%;
+    max-width: none;
+    float: none;
+    margin: 20px 0; /* Ajusta el margen vertical y elimina el margen horizontal */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter__container {
+    width: 90%; /* Ajusta el ancho del contenedor de filtros */
+    max-width: 600px; /* Mantiene un máximo para evitar que se expanda demasiado */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 10px;
+  }
+
+  .filter__item {
+    margin-bottom: 10px;
+  }
+}
+

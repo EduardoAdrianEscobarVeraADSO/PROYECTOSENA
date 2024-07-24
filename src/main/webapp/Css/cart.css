@@ -1,0 +1,122 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 27/06/2024, 1:05:04 p. m.
+    Author     : Propietario
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(components.css);
+@import url(global.css);
+body{
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+::selection{
+  background-color: var(--principal__color);
+  color: var(--secondary__color);
+  transition: 1s ease;
+}
+
+main {
+    padding: 1rem;
+}
+
+.cart {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--secondary__color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--light__gray);
+}
+
+.cart h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--light__gray);
+}
+
+.cart-item > div {
+    flex: 1;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.item-cantidad input {
+    width: 50px;
+}
+
+.cart-summary {
+    text-align: LEFT;
+}
+
+.cart-summary h3 {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+}
+
+.cart-summary p {
+    margin: 0.5rem 0;
+}
+
+.checkout-btn {
+    background-color: #2ecc71;
+    color: var(--secondary__color);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    color: var(--secondary__color);
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+/* Media Queries */
+@media (max-width: 600px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item > div {
+        text-align: left;
+        padding: 0.5rem 0;
+    }
+
+    .cart-summary {
+        text-align: left;
+    }
+
+    .checkout-btn {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.25rem;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
