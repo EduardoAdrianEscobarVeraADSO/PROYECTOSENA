@@ -49,7 +49,7 @@ public class agregarUsuarioAdmin extends HttpServlet {
             usuario.setCorreo(correo);
             usuario.setContraseña(contraseña);
             usuario.setId_rol_fk(Integer.parseInt(request.getParameter("rol-user")));
-
+            
             usuarioadminDAO usuarioDAO = new usuarioadminDAO();
             boolean accionExitosa = usuarioDAO.actualizarUsuario(usuario);
 
@@ -59,6 +59,37 @@ public class agregarUsuarioAdmin extends HttpServlet {
             } else {
                 response.sendRedirect("../error.jsp");
             }
+        }
+    }
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
+    protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String accion = request.getParameter("action");
+
+        
+
+         if(accion.equals("accioneditar")){
+            String nombre = request.getParameter("nombre");
+            String correo = request.getParameter("correo");
+            String idUsuario = request.getParameter("id");
+            String contrasena = request.getParameter("contrasena");
+            String idRol = request.getParameter("rol");
+
+            request.setAttribute("accion", "editar");
+            request.setAttribute("nombre", nombre);
+            request.setAttribute("correo", correo);
+            request.setAttribute("idUsuario", idUsuario);
+            request.setAttribute("contrasena", contrasena);
+            request.setAttribute("idRol", idRol);
+            
+            request.getRequestDispatcher("Sadmin/editarUsuario.jsp").forward(request, response);
         }
     }
 }

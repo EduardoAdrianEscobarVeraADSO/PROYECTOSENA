@@ -90,7 +90,7 @@
                                 + "<td class='category-table__cell'>"
                                 + "<form action='eliminarUsuario' method='post'>"
                                 + "<input type='hidden' name=deleteId value='" + usuario.getId() + "'>"
-                                + "<a class='button button--edit' href='/Exchange/Sadmin/editarUsuario.jsp?id="+usuario.getId()+"' type=button>Editar</a>" 
+                                + "<a class='button button--edit' href='/Exchange/agregarUsuarios?id="+usuario.getId()+"&nombre="+usuario.getNombre()+"&correo="+usuario.getCorreo()+"&rol="+usuario.getId_rol_fk()+"&action=accioneditar' type=button>Editar</a>" 
                                 + "<button class='button button--delete' >Eliminar</button>"
                                 + "</form>"
                                 + "</td>"

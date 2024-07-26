@@ -39,7 +39,7 @@
                     List<model.Categoriamodel> categorias = (List<model.Categoriamodel>) session.getAttribute("listarcategorias");
                     if (categorias != null) {
                         for (model.Categoriamodel categoria : categorias) {
-                            out.print("<a class=products__item href=sections/jeans.jsp>" + categoria.getNombre_categoria() + "</a>");                           
+                            out.print("<a class='products__item' href='/Exchange/components/prendas.jsp?id_categoria=" + categoria.getID_categoria() + "'>" + categoria.getNombre_categoria() + "</a>");                           
                         }
                     }
                 %>
