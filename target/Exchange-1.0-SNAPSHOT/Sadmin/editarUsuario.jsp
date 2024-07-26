@@ -80,7 +80,7 @@
                 <label class='form__label' for='user-email'>Correo:</label>
                 <input class='form__input' type=text name='user-email' id='user-email' value='<% if(correo != null){out.print(correo);}%>'>
                 <label class='form__label' for='user-password'>Contraseña:</label>
-                <input class='form__input' type='password' name='user-password' id='user-password' value='<% if(contrasena != null){out.print(contrasena);} %>'>
+                <input class='form__input' type='Text' name='user-password' id='user-password' value='<% if(contrasena != null){out.print(contrasena);} %>'>
                 <label class='form__label' for='rol-user'>ID Rol:</label>
                 <input class='form__input' type='number' name='rol-user' id='rol-user' value='<% if(idRol != null){out.print(idRol);}%>'> 
                 <input class='form__button' type='submit' value='Actualizar'>             

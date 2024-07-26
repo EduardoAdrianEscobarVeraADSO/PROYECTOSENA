@@ -75,6 +75,7 @@
                 <th class="category-table__header">ID Usuario</th>
                 <th class="category-table__header">Nombre</th>
                 <th class="category-table__header">Correo</th>
+                <th class="category-table__header">Rol</th>
                 <th class="category-table__header">Acciones</th>
             </tr>
             </thead>
@@ -87,10 +88,11 @@
                                 + "<td class='category-table__cell'>" + usuario.getId() + "</td>"
                                 + "<td class='category-table__cell'>" + usuario.getNombre() + "</td>"
                                 + "<td class='category-table__cell'>" + usuario.getCorreo() + "</td>"
+                                + "<td class='category-table__cell'>" + usuario.getNombre_rol()+ "</td>"
                                 + "<td class='category-table__cell'>"
                                 + "<form action='eliminarUsuario' method='post'>"
                                 + "<input type='hidden' name=deleteId value='" + usuario.getId() + "'>"
-                                + "<a class='button button--edit' href='/Exchange/agregarUsuarios?id="+usuario.getId()+"&nombre="+usuario.getNombre()+"&correo="+usuario.getCorreo()+"&rol="+usuario.getId_rol_fk()+"&action=accioneditar' type=button>Editar</a>" 
+                                + "<a class='button button--edit' href='/Exchange/agregarUsuarios?id="+usuario.getId()+"&nombre="+usuario.getNombre()+"&correo="+usuario.getCorreo()+"&rol="+usuario.getId_rol_fk()+"&contrasena="+usuario.getContraseña()+"&action=accioneditar' type=button>Editar</a>" 
                                 + "<button class='button button--delete' >Eliminar</button>"
                                 + "</form>"
                                 + "</td>"

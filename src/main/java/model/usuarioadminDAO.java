@@ -27,7 +27,7 @@ public class usuarioadminDAO {
     }
     
    public List<usuarioadminModel> todosLosUsuarios() {
-    String sql = "SELECT * FROM usuarios";
+    String sql = "SELECT ID_usuario, nombre, correo, contraseña, id_rol_fk, nombre_rol FROM usuarios INNER JOIN roles ON id_rol_fk = id";
     List<usuarioadminModel> usuarios = new ArrayList<>();
 
     try (PreparedStatement ps = conexion.prepareStatement(sql);
@@ -39,6 +39,7 @@ public class usuarioadminDAO {
             String correo = rs.getString("correo");
             String contraseña = rs.getString("contraseña");
             int idRolFk = rs.getInt("id_rol_fk");
+            String nombre_rol = rs.getString("nombre_rol");
 
             usuarioadminModel usuario = new usuarioadminModel();
             usuario.setId(idUsuario);
@@ -46,7 +47,7 @@ public class usuarioadminDAO {
             usuario.setCorreo(correo);
             usuario.setContraseña(contraseña);
             usuario.setId_rol_fk(idRolFk);
-
+            usuario.setNombre_rol(nombre_rol);
             usuarios.add(usuario);
         }
     } catch (SQLException e) {
