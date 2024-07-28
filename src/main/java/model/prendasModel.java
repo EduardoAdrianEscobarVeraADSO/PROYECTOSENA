@@ -12,9 +12,28 @@ public class prendasModel {
     private int ID_prenda;
     private int ID_categoria;
     private String nombre_prenda;
+    private String descripcion_prenda;
+    private int stock_prenda;
     private int precio;
     private String imagen;
 
+    public String getDescripcion_prenda() {
+        return descripcion_prenda;
+    }
+
+    public void setDescripcion_prenda(String descripcion_prenda) {
+        this.descripcion_prenda = descripcion_prenda;
+    }
+
+    public int getStock_prenda() {
+        return stock_prenda;
+    }
+
+    public void setStock_prenda(int stock_prenda) {
+        this.stock_prenda = stock_prenda;
+    }
+    
+    
     public int getID_prenda() {
         return ID_prenda;
     }

@@ -77,7 +77,32 @@ body{
   padding-top: 80px;
   
 }
+.profile-container {
+                position: relative;
+                display: inline-block;
+                
+            }
 
+            .dropdown-menu {
+                display: none; /* Oculta el menú por defecto */
+                position: absolute;
+                background-color: white;
+                min-width: 150px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                border-radius: 10px;
+            }
+
+            .dropdown-menu a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-menu a:hover {
+                background-color: #f1f1f1;
+            }
 .products__item{
   padding: 8px 8px 8px 32px;
   text-decoration: none;

@@ -27,6 +27,8 @@ public class agregarPrendas extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombrePrenda = request.getParameter("nombrePrenda");
+        String descripcionPrenda = request.getParameter("descripcionPrenda");
+        
         // Obtener la imagen del formulario
         Part filePart = request.getPart("URLimagen");
         String fileName = filePart.getSubmittedFileName();
@@ -37,12 +39,14 @@ public class agregarPrendas extends HttpServlet {
         filePart.write(filePath);
         int nombre_categoria = Integer.parseInt(request.getParameter("nombre_categoria"));
         int precioPrenda = Integer.parseInt(request.getParameter("precioPrenda"));
-        
+        int stockPrenda = Integer.parseInt(request.getParameter("stockPrenda"));
         prendasModel prendasmodel = new prendasModel();
         prendasmodel.setID_categoria(nombre_categoria);
         prendasmodel.setNombre_prenda(nombrePrenda);
         prendasmodel.setImagen(fileName);
         prendasmodel.setPrecio(precioPrenda);
+        prendasmodel.setDescripcion_prenda(descripcionPrenda);
+        prendasmodel.setStock_prenda(stockPrenda);
         
         prendasDAO prendasdao = new prendasDAO();
         prendasdao.agregarPrenda(prendasmodel);

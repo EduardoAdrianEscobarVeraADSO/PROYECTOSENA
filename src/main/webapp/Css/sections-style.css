@@ -19,7 +19,9 @@ body{
   color: var(--secondary__color);
   transition: 1s ease;
 }
-
+h1{
+    text-align: center;
+}
   /* main */
   .filter {
   width: 15vw;
