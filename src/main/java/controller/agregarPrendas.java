@@ -16,6 +16,49 @@ import java.io.IOException;
 @MultipartConfig
 public class agregarPrendas extends HttpServlet {
     private static final String UPLOAD_DIR = "uploads";
+    
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+
+        
+        if (action.equals("agregar")) {
+            response.sendRedirect("agregarPrendas?action=agregar");
+        }else if (action.equals("editar")) {
+            response.sendRedirect("agregarPrendas?action=accioneditar");
+        }
+        
+        else if(action.equals("accioneditar")){
+            
+            String nombre = request.getParameter("nombre");
+            String idPrenda = request.getParameter("id");
+            String categoria = request.getParameter("categoria");
+            String precio = request.getParameter("precio");
+            String stock = request.getParameter("stock");
+            String descripcion = request.getParameter("descripcion");
+            String imagen = request.getParameter("imagen");
+            
+            request.setAttribute("nombrePrenda", nombre);
+            request.setAttribute("idPrenda", idPrenda);
+            request.setAttribute("categoria", categoria);
+            request.setAttribute("precioPrenda", precio);
+            request.setAttribute("stockPrenda", stock);
+            request.setAttribute("descripcionPrenda", descripcion);
+            request.setAttribute("imagen", imagen);
+            
+            request.getRequestDispatcher("admin/editarPrendas.jsp").forward(request, response);
+            
+            
+        }
+    }
+
 
     /**
      *
@@ -100,7 +143,8 @@ public class agregarPrendas extends HttpServlet {
             } else {
                 response.sendRedirect("error.jsp");
             }
-        }
+        } 
+        
     }
 
 }

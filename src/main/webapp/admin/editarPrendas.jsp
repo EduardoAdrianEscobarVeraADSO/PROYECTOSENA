@@ -29,7 +29,7 @@
     %>
     
     <body>
-        <%@ include file="../components/header2.jsp" %>
+        
         
         <div class="form-container">
             <h1>Editar Prenda</h1>

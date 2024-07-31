@@ -39,7 +39,8 @@ public class CategoriaDAO {
         
     }
     public List<Categoriamodel> todasLasCategorias() {
-        String sql = "SELECT * FROM categorias";
+        String sql = "SELECT * FROM categorias WHERE ID_categoria <> 1";
+        
         List<Categoriamodel> categorias = new ArrayList<>();
 
         try (PreparedStatement ps = conexion.prepareStatement(sql);
@@ -59,12 +60,18 @@ public class CategoriaDAO {
         return categorias;
     }
     public void eliminarCategoria(int idCategoria) {
-        String sql = "DELETE FROM categorias WHERE ID_categoria = ?";
+        String sql1 = "UPDATE prendas SET ID_categoria = 1 WHERE ID_categoria = ?";
+        String sql2 = "DELETE FROM categorias WHERE ID_categoria = ?";
+        
+        
 
         try (Connection conn = conexion;
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(sql1);
+                PreparedStatement stmt2 = conn.prepareStatement(sql2)) {
             stmt.setInt(1, idCategoria);
             stmt.executeUpdate();
+            stmt2.setInt(1, idCategoria);
+            stmt2.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

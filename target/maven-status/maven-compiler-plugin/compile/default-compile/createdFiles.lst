@@ -6,6 +6,7 @@ model\prendasModel.class
 controller\agregarUsuarioAdmin.class
 model\UsuarioModel.class
 controller\listarCategorias.class
+controller\eliminarPrenda.class
 config\Pruebaconexion.class
 controller\agregarCategorias.class
 model\Categoriamodel.class
@@ -16,4 +17,6 @@ model\prendasDAO.class
 controller\eliminarCategoria.class
 controller\mostrarPrendasServlet.class
 model\UsuarioDAO.class
+controller\agregarPrendas.class
+controller\ListarPrendas.class
 model\usuarioadminDAO.class
