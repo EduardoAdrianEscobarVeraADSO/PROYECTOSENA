@@ -58,7 +58,6 @@
               <li><a href="https://www.instagram.com" class="fab fa-instagram fa-2x"></a></li>
               <li><a href="https://www.facebook.com" class="fab fa-facebook fa-2x" ></a></li>
               <li><a href="https://www.whatsapp.com" class="fab fa-whatsapp fa-2x"></a></li>
-              <li><a href="../Like-Cart/likes.jsp" class="fas fa-heart fa-2x"></a></li>
               <li><a href="../login/inicio_sesion.jsp" class="fas fa-user fa-2x"></a></li>
               <li><a href="../Like-Cart/cart.jsp" class="fas fa-shopping-cart fa-2x"></a></li>
             </ul>

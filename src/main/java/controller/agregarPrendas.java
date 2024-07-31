@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import model.prendasDAO;
+import model.prendasModel;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -14,44 +9,98 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
-import model.prendasDAO;
-import model.prendasModel;
+import java.io.File;
+import java.io.IOException;
 
-/**
- *
- * @author eduar
- */
 @WebServlet("/agregarPrendas")
 @MultipartConfig
 public class agregarPrendas extends HttpServlet {
+    private static final String UPLOAD_DIR = "uploads";
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombrePrenda = request.getParameter("nombrePrenda");
         String descripcionPrenda = request.getParameter("descripcionPrenda");
-        
-        // Obtener la imagen del formulario
-        Part filePart = request.getPart("URLimagen");
-        String fileName = filePart.getSubmittedFileName();
-        String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
-        File uploadDir = new File(uploadPath);
-        if (!uploadDir.exists()) uploadDir.mkdir();
-        String filePath = uploadPath + File.separator + fileName;
-        filePart.write(filePath);
-        int nombre_categoria = Integer.parseInt(request.getParameter("nombre_categoria"));
-        int precioPrenda = Integer.parseInt(request.getParameter("precioPrenda"));
-        int stockPrenda = Integer.parseInt(request.getParameter("stockPrenda"));
-        prendasModel prendasmodel = new prendasModel();
-        prendasmodel.setID_categoria(nombre_categoria);
-        prendasmodel.setNombre_prenda(nombrePrenda);
-        prendasmodel.setImagen(fileName);
-        prendasmodel.setPrecio(precioPrenda);
-        prendasmodel.setDescripcion_prenda(descripcionPrenda);
-        prendasmodel.setStock_prenda(stockPrenda);
-        
-        prendasDAO prendasdao = new prendasDAO();
-        prendasdao.agregarPrenda(prendasmodel);
-        response.sendRedirect("admin/agregarPrendas.jsp");
-      
+        String precioPrenda = request.getParameter("precioPrenda");
+        String stockPrenda = request.getParameter("stockPrenda");
+        String idCategoria = request.getParameter("idCategoria"); 
+        String talla = request.getParameter("tallaPrenda"); 
+        String action = request.getParameter("action");
+
+        if (action.equals("agregar")) {
+            // Agregar una nueva prenda
+            prendasModel prenda = new prendasModel();
+            prenda.setNombre_prenda(nombrePrenda);
+            prenda.setDescripcion_prenda(descripcionPrenda);
+            prenda.setPrecio((int) Double.parseDouble(precioPrenda));
+            prenda.setStock_prenda(Integer.parseInt(stockPrenda));
+            prenda.setID_categoria(Integer.parseInt(idCategoria));
+            prenda.setTalla(talla);
+
+            // Manejar la imagen
+            String contextPath = getServletContext().getRealPath("/");
+            String uploadFilePath = contextPath + File.separator + UPLOAD_DIR;
+            File uploadDir = new File(uploadFilePath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdirs();
+            }
+            Part filePart = request.getPart("URLimagen");
+            String fileName = filePart.getSubmittedFileName();
+            String filePath = uploadFilePath + File.separator + fileName;
+            filePart.write(filePath);
+            prenda.setImagen(fileName);
+
+            prendasDAO prendaDAO = new prendasDAO();
+            boolean accionExitosa = prendaDAO.agregarPrenda(prenda);
+
+            if (accionExitosa) {
+                response.sendRedirect("admin/administracionPrendas.jsp");
+            } else {
+                response.sendRedirect("error.jsp");
+            }
+        } else if (action.equals("editar")) {
+            // Editar una prenda existente
+            String idPrendaString = request.getParameter("idPrenda");
+            int idPrenda = Integer.parseInt(idPrendaString);
+
+            prendasModel prenda = new prendasModel();
+            prenda.setID_prenda(idPrenda);
+            prenda.setNombre_prenda(nombrePrenda);
+            prenda.setDescripcion_prenda(descripcionPrenda);
+            prenda.setPrecio((int) Double.parseDouble(precioPrenda));
+            prenda.setStock_prenda(Integer.parseInt(stockPrenda));
+            prenda.setID_categoria(Integer.parseInt(idCategoria));
+            prenda.setTalla(talla);
+
+            // Manejar la imagen
+            String contextPath = getServletContext().getRealPath("/");
+            String uploadFilePath = contextPath + File.separator + UPLOAD_DIR;
+            File uploadDir = new File(uploadFilePath);
+            if (!uploadDir.exists()) {
+                uploadDir.mkdirs();
+            }
+            Part filePart = request.getPart("URLimagen");
+            String fileName = filePart.getSubmittedFileName();
+            String filePath = uploadFilePath + File.separator + fileName;
+            filePart.write(filePath);
+            prenda.setImagen(fileName);
+
+            prendasDAO prendaDAO = new prendasDAO();
+            boolean accionExitosa = prendaDAO.actualizarPrenda(prenda);
+
+            if (accionExitosa) {
+                response.sendRedirect("admin/administracionPrendas.jsp");
+            } else {
+                response.sendRedirect("error.jsp");
+            }
+        }
     }
 
 }

@@ -1,101 +1,94 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 27/06/2024, 1:05:51 p. m.
-    Author     : Propietario
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 @import url(components.css);
 @import url(global.css);
-body{
-  margin: 0;
-  font-family: "Poppins", sans-serif;
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
 }
-::selection{
-  background-color: #212121;
-  color: var(--secondary__color);
-  transition: 1s ease;
+
+::selection {
+    background-color: #212121;
+    color: var(--secondary__color);
+    transition: 1s ease;
 }
-h1{
+
+h1 {
     text-align: center;
 }
-  /* main */
-  .filter {
-  width: 15vw;
-  max-width: 300px;
-  float: right;
-  margin-top: 25px;
-  margin-right: 10px;
-  /* Ajusta los estilos según sea necesario */
+
+/* Main */
+.filter {
+    width: 15vw;
+    max-width: 300px;
+    float: right;
+    margin-top: 25px;
+    margin-right: 10px;
 }
 
 .filter__container {
-  padding: 20px;
-  background-color: var(--secondary__color);
-  border-radius: 8px;
-  box-shadow: 0 2px 4px var(--principal__color);
+    padding: 20px;
+    background-color: var(--secondary__color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--principal__color);
 }
 
 .filter__item {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .filter__item label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .filter__item select,
 .filter__item input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid var(--gray__color);
-  border-radius: 5px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--gray__color);
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 /* Ajusta más estilos según necesites */
-
-.products__container{
+.products__container {
     display: grid;
     place-items: center;
 }
-  .products {
+
+.products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px; /* Aumenta el espacio entre los productos */
+    gap: 30px; 
     margin-top: 20px;
     width: 90%;
 }
 
 .item__container {
-    background-color: var(--secondary__color); /* Cambia el color de fondo */
+    background-color: var(--secondary__color); 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px var(--light__gray); /* Agrega una sombra suave */
-    transition: box-shadow 0.3s ease; /* Agrega una transición suave para el efecto de hover */
+    box-shadow: 0 2px 4px var(--light__gray); 
+    transition: box-shadow 0.3s ease; 
     transition: transform 0.3s ease;
 }
 
-
 .item__container:hover {
-    box-shadow: 0 4px 8px rgb(189, 189, 189); /* Aumenta la sombra en el hover */
+    box-shadow: 0 4px 8px rgb(189, 189, 189); 
     transform: scale(1.1);
 }
 
 .item__container img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px; /* Aumenta el espacio entre la imagen y el título */
+    margin-bottom: 15px;
     border-radius: 10px;
 }
 
 .products__title {
-    font-size: 18px; /* Aumenta el tamaño del título */
+    font-size: 18px; 
     margin-bottom: 10px;
     text-align: center;
 }
@@ -105,27 +98,70 @@ h1{
     color: var(--light__black);
     text-align: center;
 }
-/* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-  .filter {
-    width: 100%;
-    max-width: none;
-    float: none;
-    margin: 20px 0; /* Ajusta el margen vertical y elimina el margen horizontal */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .filter__container {
-    width: 90%; /* Ajusta el ancho del contenedor de filtros */
-    max-width: 600px; /* Mantiene un máximo para evitar que se expanda demasiado */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 10px;
-  }
-
-  .filter__item {
-    margin-bottom: 10px;
-  }
+/* Estilos para product__details */
+.product__details {
+    margin-top: 15px;
+    text-align: center;
 }
 
+.product__description,
+.product__talla {
+    margin: 10px 0;
+    font-size: 14px;
+    color: var(--gray__color);
+}
+.product__description {
+    max-width: 100%;
+    overflow-wrap: break-word; 
+    margin-bottom: 10px; 
+    line-height: 1.5; 
+}
+
+
+.add-to-cart {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--principal__color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: var(--secondary__color);
+    color: var(--principal__color);
+    border: 1px solid var(--principal__color);
+}
+.add-to-cart.disabled {
+    background-color: #dcdcdc; 
+    color: #999; 
+    cursor: not-allowed;
+    pointer-events: none; 
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .filter {
+        width: 100%;
+        max-width: none;
+        float: none;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter__container {
+        width: 90%; 
+        max-width: 600px; 
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .filter__item {
+        margin-bottom: 10px;
+    }
+}

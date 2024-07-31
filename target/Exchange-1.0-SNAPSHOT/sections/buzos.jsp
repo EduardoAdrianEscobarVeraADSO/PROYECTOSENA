@@ -14,23 +14,33 @@
     <body>
         <%@ include file="../components/header3.jsp" %>
 
-            <h1>Prendas por Categoría</h1>
-            <section class="products__container">
-                <div class="products">
-                    <%
-                    List<prendasModel> prendas = (List<prendasModel>) request.getAttribute("prendas");
-                    if (prendas != null) {
-                        for (prendasModel prenda : prendas) {
-                            out.print("<div class='products item__container'>"
-                                    + "<img src='" + prenda.getImagen() + "' alt='" + prenda.getNombre_prenda() + "' />"
-                                    + "<h2 class='products__title'>" + prenda.getNombre_prenda() + "</h2>"
-                                    + "<p class = 'products__price'>Precio: $" + prenda.getPrecio() + "</p>"
-                                    + "</div>");
-                        }
+        <h1>Prendas por Categoría</h1>
+        <section class="products__container">
+            <div class="products">
+                <%
+                List<prendasModel> prendas = (List<prendasModel>) request.getAttribute("prendas");
+                if (prendas != null) {
+                    for (prendasModel prenda : prendas) {
+                        String imagenPath = request.getContextPath() + "/uploads/" + prenda.getImagen();
+                        boolean stockDisponible = prenda.getStock_prenda() > 0;
+                        String botonTexto = stockDisponible ? "Añadir al carrito" : "Agotada";
+                        String botonClase = stockDisponible ? "add-to-cart" : "add-to-cart disabled";
+
+                        out.print("<div class='products item__container'>"
+                                + "<img src='" + imagenPath + "' alt='" + prenda.getNombre_prenda() + "' />"
+                                + "<h2 class='products__title'>" + prenda.getNombre_prenda() + "</h2>"
+                                + "<p class='products__price'>Precio: $" + prenda.getPrecio() + "</p>"
+                                + "<div class='product__details'>"
+                                + "<p class='product__description'>" + prenda.getDescripcion_prenda() + "</p>"
+                                + "<p class='product__talla'>Talla: " + prenda.getTalla() + "</p>"
+                                + "<button class='" + botonClase + "'>" + botonTexto + "</button>"
+                                + "</div>"
+                                + "</div>");
                     }
+                }
                 %>
-                </div> 
-            </section>
+            </div> 
+        </section>
     <script src="${pageContext.request.contextPath}/JS/sections-main.js"></script>            
     </body>
 </html>

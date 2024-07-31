@@ -58,7 +58,7 @@
         <form class="link-container" action="${pageContext.request.contextPath}/listarAdmin" method="get">
             <button class="link-container__link">Listar Categorias</button>
             <a class="link-container__link" href="${pageContext.request.contextPath}/admin/agregarCategorias.jsp">Agregar categorias</a>
-            <a class="link-container__link" href="${pageContext.request.contextPath}/listarCategoriasSelect">Agregar prendas</a>
+            <a class="link-container__link" href="${pageContext.request.contextPath}/admin/administracionPrendas.jsp">Administrar prendas</a>
         </form>
     </div>
       <script src="${pageContext.request.contextPath}/JS/panel_admin.js"></script>

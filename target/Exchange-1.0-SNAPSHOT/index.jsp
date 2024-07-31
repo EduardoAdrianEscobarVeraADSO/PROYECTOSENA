@@ -18,7 +18,7 @@
 
     <body>
         
-        <%@ include file="components/header.jsp" %>
+        <%@ include file="components/header3.jsp" %>
         <!-- menu de navegacion principal -->
         
         <section>

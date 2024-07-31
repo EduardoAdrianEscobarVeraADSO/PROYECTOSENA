@@ -25,11 +25,12 @@ public class UsuarioDAO {
     }
 
     public boolean insertarUsuario(UsuarioModel empleadoModel) {
-        String sql = "INSERT INTO usuarios (nombre, correo, contraseña) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO usuarios (nombre, correo, contraseña, id_rol_fk) VALUES (?, ?, ?, ?)";
         try (PreparedStatement ps = conexion.prepareStatement(sql)) {
             ps.setString(1, empleadoModel.getNombreUsuario());
             ps.setString(2, empleadoModel.getCorreoElectronico());
             ps.setString(3, empleadoModel.getContrasena());
+            ps.setInt(4, empleadoModel.getAdmin());
             int filasAfectadas = ps.executeUpdate();
             return filasAfectadas > 0;
         } catch (SQLException e) {

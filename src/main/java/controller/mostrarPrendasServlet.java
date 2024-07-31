@@ -12,6 +12,7 @@ import java.util.List;
 
 @WebServlet("/mostrarPrendas")
 public class mostrarPrendasServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtener el ID de la categoría de los parámetros de la solicitud

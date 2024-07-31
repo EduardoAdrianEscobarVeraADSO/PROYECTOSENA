@@ -16,7 +16,17 @@ public class prendasModel {
     private int stock_prenda;
     private int precio;
     private String imagen;
+    private String talla;
 
+    public String getTalla() {
+        return talla;
+    }
+
+    public void setTalla(String talla) {
+        this.talla = talla;
+    }
+    
+    
     public String getDescripcion_prenda() {
         return descripcion_prenda;
     }

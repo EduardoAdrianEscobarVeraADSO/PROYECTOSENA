@@ -43,7 +43,7 @@
           <div id="myNav" class="header__menu">
             <!-- Botón para cerrar el menú -->
             <i class="fas fa-times header__menu-icon--close"></i>
-            <a class="products__item" href="sections/jeans.jsp">Jeans</a>
+            
             <%
                 // Asegúrate de que este atributo esté configurado antes de acceder a él
                 List<model.Categoriamodel> headerCategorias = (List<model.Categoriamodel>) session.getAttribute("listarcategorias");
@@ -58,7 +58,6 @@
               <li><a href="https://www.instagram.com" class="fab fa-instagram fa-2x"></a></li>
               <li><a href="https://www.facebook.com" class="fab fa-facebook fa-2x" ></a></li>
               <li><a href="https://www.whatsapp.com" class="fab fa-whatsapp fa-2x"></a></li>
-              <li><a href="${pageContext.request.contextPath}/Like-Cart/likes.jsp" class="fas fa-heart fa-2x"></a></li>
               <li><a href="${pageContext.request.contextPath}/login/inicio_sesion.jsp" class="fas fa-user fa-2x"></a></li>
               <li><a href="${pageContext.request.contextPath}/Like-Cart/cart.jsp" class="fas fa-shopping-cart fa-2x"></a></li>
             </ul>

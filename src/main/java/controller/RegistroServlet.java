@@ -49,6 +49,7 @@ public class RegistroServlet extends HttpServlet {
             usuarioModel.setNombreUsuario(nombreUsuario);
             usuarioModel.setCorreoElectronico(correoElectronico);
             usuarioModel.setContrasena(contrasena);
+            usuarioModel.setAdmin(admin);
             UsuarioDAO usuarioDAO = new UsuarioDAO();
              boolean registroExitoso = usuarioDAO.insertarUsuario(usuarioModel);
        
