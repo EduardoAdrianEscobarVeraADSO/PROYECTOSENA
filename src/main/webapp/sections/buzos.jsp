@@ -41,6 +41,6 @@
                 %>
             </div> 
         </section>
-    <script src="${pageContext.request.contextPath}/JS/sections-main.js"></script>            
+    <script src="${pageContext.request.contextPath}/JS/cart.js"></script>            
     </body>
 </html>

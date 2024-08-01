@@ -46,7 +46,6 @@
           <!-- Botón para cerrar el menú -->
 
           <i class="fas fa-times header__menu-icon--close"></i>
-          <a class="products__item" href="administracion.jsp">Administracion</a>
           <a class="products__item" href="sections/jeans.jsp">Jeans</a>
           <a class="products__item" href="sections/oversizes.jsp">Oversizes</a>
           <a class="products__item" href="sections/camisetas.jsp">Camisetas</a>

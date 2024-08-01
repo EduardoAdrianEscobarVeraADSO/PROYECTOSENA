@@ -101,7 +101,7 @@
                                 </label>
                             </div>
                             <input type="submit" value="Iniciar Sesión">
-                            <a href="../index.jsp" class="regresar__home">Regresar</a>
+                            <a href="../index_1.jsp" class="regresar__home">Regresar</a>
                         </form>
                     </div>
                 </div>

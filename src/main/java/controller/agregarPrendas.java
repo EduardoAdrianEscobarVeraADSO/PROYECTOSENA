@@ -47,7 +47,7 @@ public class agregarPrendas extends HttpServlet {
             
             request.setAttribute("nombrePrenda", nombre);
             request.setAttribute("idPrenda", idPrenda);
-            request.setAttribute("categoria", categoria);
+            request.setAttribute("idCategoria", categoria);
             request.setAttribute("precioPrenda", precio);
             request.setAttribute("stockPrenda", stock);
             request.setAttribute("descripcionPrenda", descripcion);

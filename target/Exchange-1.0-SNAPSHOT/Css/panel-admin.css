@@ -170,3 +170,8 @@ small {
     margin-top: 5px;
     display: block;
 }
+.error {
+      color: red;
+      display: none;
+    }
+    

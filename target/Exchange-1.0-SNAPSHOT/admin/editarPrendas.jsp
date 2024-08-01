@@ -30,7 +30,7 @@
     
     <body>
         
-        
+        <%@ include file="../components/header2.jsp" %>
         <div class="form-container">
             <h1>Editar Prenda</h1>
            <form class="form" action="${pageContext.request.contextPath}/agregarPrendas" method="post" enctype="multipart/form-data">

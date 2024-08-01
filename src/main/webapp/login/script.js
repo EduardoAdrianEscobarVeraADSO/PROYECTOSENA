@@ -26,10 +26,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (nombreUsuarioInput) {
         nombreUsuarioInput.addEventListener('keypress', soloLetras);
     }
-    
-    if (correoElectronicoInput) {
-        correoElectronicoInput.addEventListener('keypress', soloLetras);
-    }
 });
 
 function soloLetras(event) {

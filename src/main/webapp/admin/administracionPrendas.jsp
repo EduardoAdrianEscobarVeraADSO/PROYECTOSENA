@@ -22,7 +22,7 @@
     </head>
     <body>
     
-
+    <%@ include file="../components/header2.jsp" %>    
     <div class="main-container">
         <h1 class="main-container__title">Gestión de Prendas</h1>
 
