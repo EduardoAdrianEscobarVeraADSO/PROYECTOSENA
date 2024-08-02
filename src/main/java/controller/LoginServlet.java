@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
     String CorreoElectronico = request.getParameter("userEmail");
     String contraseña = request.getParameter("userPassword");
     
+
     UsuarioModel usuariomodel = new UsuarioModel();
     usuariomodel.setCorreoElectronico(CorreoElectronico);
     usuariomodel.setContrasena(contraseña);
@@ -47,6 +48,7 @@ public class LoginServlet extends HttpServlet {
     HttpSession session = request.getSession();
     session.setAttribute("listarcategorias", listarcategorias);
     session.setAttribute("login", usuariomodel);
+    session.setAttribute("idUsuario", usuariomodel.getId());
 
     switch (usuariomodel.getAdmin()) {
                 case 1:

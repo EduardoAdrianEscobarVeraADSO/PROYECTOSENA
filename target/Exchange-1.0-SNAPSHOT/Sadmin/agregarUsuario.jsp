@@ -17,7 +17,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-      
+      <%@ include file="../components/header2.jsp" %>
       <div class="main-container">
         <h1 class="main-container__title">Agregar Usuario</h1>
             <form id="add-user-form" class="form" action="${pageContext.request.contextPath}/agregarUsuarios" method="post">

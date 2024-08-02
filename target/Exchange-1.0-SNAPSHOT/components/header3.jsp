@@ -12,6 +12,7 @@
 <%
             UsuarioModel usuariomodel = (UsuarioModel) session.getAttribute("login");
             String nombreUsuario = usuariomodel.getNombreUsuario();
+            int  idUsuario =  usuariomodel.getId();
         %>
         <header class="header">
           <!-- Icono para abrir el menú -->

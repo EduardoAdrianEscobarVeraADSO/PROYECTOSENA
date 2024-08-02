@@ -57,7 +57,7 @@ public class RegistroServlet extends HttpServlet {
             if (registroExitoso) {
                 HttpSession session = request.getSession();
                 session.setAttribute("login", usuarioModel);
-                response.sendRedirect("../login/inicio_sesion.jsp");
+                response.sendRedirect("../index.jsp");
                 
             } else {
                 response.sendRedirect("inicio_sesion.jsp");

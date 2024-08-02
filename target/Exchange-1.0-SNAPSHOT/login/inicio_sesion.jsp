@@ -34,12 +34,7 @@
                 <div class="form-information">
                     <div class="form-information-childs">
                         <h2>Crear una Cuenta</h2>
-                        <div class="icons">
-                            <i class='bx bxl-google'></i>
-                            <i class='bx bxl-facebook'></i>
-                            <i class='bx bxl-instagram' ></i>
-                        </div>
-                        <p>o usa tu email para registrarte</p>
+                        
                         <form class="form form-register" action="/Exchange/login/registro" method="post">
 
                             <div>
@@ -81,12 +76,7 @@
                 <div class="form-information">
                     <div class="form-information-childs">
                         <h2>Iniciar Sesión</h2>
-                        <div class="icons">
-                            <i class='bx bxl-google'></i>
-                            <i class='bx bxl-facebook'></i>
-                            <i class='bx bxl-instagram' ></i>
-                        </div>
-                        <p>o Iniciar Sesión con una cuenta</p>
+                        
                         <form class="form form-login" action="/Exchange/login/loginSV" method="post">
                             <div>
                                 <label >
@@ -101,7 +91,7 @@
                                 </label>
                             </div>
                             <input type="submit" value="Iniciar Sesión">
-                            <a href="../index_1.jsp" class="regresar__home">Regresar</a>
+                            <a href="../index.jsp" class="regresar__home">Regresar</a>
                         </form>
                     </div>
                 </div>

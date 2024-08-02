@@ -147,6 +147,45 @@
                e.printStackTrace();
            }
        }
+       public prendasModel obtenerPrendaPorID(int idPrenda) {
+            String sql = "SELECT * FROM prendas WHERE ID_prenda = ?";
+            prendasModel prenda = null;
+
+            try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+                ps.setInt(1, idPrenda);
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        prenda = new prendasModel();
+                        prenda.setID_prenda(rs.getInt("ID_prenda"));
+                        prenda.setID_categoria(rs.getInt("ID_categoria"));
+                        prenda.setNombre_prenda(rs.getString("nombre_prenda"));
+                        prenda.setPrecio(rs.getInt("precio"));
+                        prenda.setImagen(rs.getString("imagen"));
+                        prenda.setDescripcion_prenda(rs.getString("descripcion"));
+                        prenda.setStock_prenda(rs.getInt("stock"));
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            return prenda;
+        }
+       public boolean actualizarStock(int idPrenda, int cantidad) {
+            String sql = "UPDATE prendas SET stock = stock - ? WHERE ID_prenda = ?";
+            try (PreparedStatement ps = conexion.prepareStatement(sql)) {
+                ps.setInt(1, cantidad);
+                ps.setInt(2, idPrenda);
+
+                int filasAfectadas = ps.executeUpdate();
+                return filasAfectadas > 0;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+
     }
 
 

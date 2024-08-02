@@ -38,7 +38,7 @@
                         <a href="logout.jsp">Cerrar sesión</a>
                     </div>
                 </div>
-            <a href="Like-Cart/cart.jsp" class="fas fa-shopping-cart"></a>
+            <a href="${pageContext.request.contextPath}/Like-Cart/cart.jsp" class="fas fa-shopping-cart"></a>
         </div>
 
         <!-- Menú desplegable -->

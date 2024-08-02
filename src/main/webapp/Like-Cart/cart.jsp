@@ -1,94 +1,59 @@
-<%-- 
-    Document   : cart
-    Created on : 27/06/2024, 12:58:07 p. m.
-    Author     : Propietario
---%>
-
+<%@page import="java.util.List"%>
+<%@page import="model.carritocomprasModel"%>
+<%@page import="model.prendasModel"%>
+<%@page import="model.carritoDAO"%>
+<%@page import="model.prendasDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carrito de Compras</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="../Css/cart.css">
-        <link rel="icon" type="image" href="img/logopage.jpg">
-    </head>
-    <body>
-      <header class="header">
-        <!-- Icono para abrir el menú -->
-        <div class="header__menu-icon">
-          <i class="fas fa-bars"></i>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="../Css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image" href="${pageContext.request.contextPath}/img/logopage.jpg">
+</head>
+<body>
+    <%@ include file="../components/header3.jsp" %>
+    <h1>Carrito de Compras</h1>
+    <section class="cart__container">
+        <div class="cart">
+            <%
+            int idUsuarioCart = (int) session.getAttribute("idUsuario");
+
+            carritoDAO carritoDAO = new carritoDAO();
+            prendasDAO prendasDAO = new prendasDAO();
+            List<carritocomprasModel> itemsCarrito = carritoDAO.obtenerCarritoPorUsuario(idUsuarioCart);
+
+            if (itemsCarrito != null && !itemsCarrito.isEmpty()) {
+                for (carritocomprasModel item : itemsCarrito) {
+                    prendasModel prenda = prendasDAO.obtenerPrendaPorID(item.getID_prenda());
+                    if (prenda != null) {
+                        String imagenPath = request.getContextPath() + "/uploads/" + prenda.getImagen();
+                        out.print("<div class='item__container'>"
+                                + "<img src='" + imagenPath + "' alt='" + prenda.getNombre_prenda() + "' />"
+                                + "<div>"
+                                + "<h2 class='cart__title'>" + prenda.getNombre_prenda() + "</h2>"
+                                + "<p class='cart__price'>Precio: $" + prenda.getPrecio() + "</p>"
+                                + "<p class='cart__cantidad'>Cantidad: " + item.getCantidad() + "</p>"
+                                + "<p class='cart__total'>Total: $" + (prenda.getPrecio() * item.getCantidad()) + "</p>"
+                                + "<form action='/Exchange/CarritoServlet' method='post'>"
+                                + "<input type='hidden' name='action' value='remover'>"
+                                + "<input type='hidden' name='idCarrito' value='" + item.getID_carrito() + "'>"
+                                + "<input type='hidden' name='idPrenda' value='" + prenda.getID_prenda() + "'>"
+                                + "<button type='submit' class='remove-from-cart'>Eliminar</button>"
+                                + "</form>"
+                                + "</div>"
+                                + "</div>");
+                    }
+                }
+            } else {
+                out.print("<p class='empty-cart-message'>Tu carrito está vacío.</p>");
+            }
+            %>
         </div>
-
-        <!-- Logo -->
-        <div class="header__logo">
-          <a href="../index.jsp"><img src="../img/logo.png" alt="Logo" id="logoImage"></a>
-        </div>
-
-        <!-- Items de navegación -->
-        <div class="header__items" id="header__items">
-          <a href="likes.jsp" class="fas fa-heart"></a>
-          <a href="../login/inicio_sesion.jsp" class="fas fa-user"></a>
-        </div>
-
-        <!-- Menú desplegable -->
-
-        <div id="myNav" class="header__menu">
-
-          <!-- Botón para cerrar el menú -->
-
-          <i class="fas fa-times header__menu-icon--close"></i>
-          <a class="products__item" href="../sections/jeans.jsp">Jeans</a>
-          <a class="products__item" href="../sections/oversizes.jsp">Oversizes</a>
-          <a class="products__item" href="../sections/camisetas.jsp">Camisetas</a>
-          <a class="products__item" href="../sections/camisas.jsp">Camisas</a>
-          <a class="products__item" href="../sections/polos.jsp">Polos</a>
-          <a class="products__item" href="../sections/shorts.jsp">Shorts</a>
-          <a class="products__item" href="../sections/buzos.jsp">Buzos</a>
-          <a class="products__item" href="../sections/sudaderas.jsp">Sudaderas</a>
-          <a class="products__item" href="../sections/chaquetas.jsp">Chaquetas</a>
-
-          <!-- Redes sociales -->
-
-          <ul class="header__menu-redes">
-            <li><a href="https://www.instagram.com" class="fab fa-instagram fa-2x"></a></li>
-            <li><a href="https://www.facebook.com" class="fab fa-facebook fa-2x"></a></li>
-            <li><a href="https://www.whatsapp.com" class="fab fa-whatsapp fa-2x"></a></li>
-            <li><a href="likes.jsp" class="fas fa-heart fa-2x"></a></li>
-            <li><a href="cart.jsp" class="fas fa-shopping-cart"></a></li>
-            <li><a href="../login/inicio_sesion.jsp" class="fas fa-user fa-2x"></a></li>
-          </ul>
-        </div>
-
-      </header>
-        <main>
-            <section class="cart">
-                <h2>Tu Carrito</h2>
-                <div class="cart-item">
-                    <div class="item-producto">Producto: Producto 1</div>
-                    <div class="item-precio">Precio: $10.00</div>
-                    <div class="item-cantidad">Cantidad: <input type="number" value="1" min="1"></div>
-                    <div class="item-total">Total: $10.00</div>
-                    <div class="item-acciones"><button class="remove-btn">Eliminar</button></div>
-                </div>
-                <div class="cart-item">
-                  <div class="item-producto">Producto: Producto 1</div>
-                  <div class="item-precio">Precio: $10.00</div>
-                  <div class="item-cantidad">Cantidad: <input type="number" value="1" min="1"></div>
-                  <div class="item-total">Total: $10.00</div>
-                  <div class="item-acciones"><button class="remove-btn">Eliminar</button></div>
-              </div>
-                <div class="cart-summary">
-                    <h3>Resumen del Pedido</h3>
-                    <p>Subtotal: $10.00</p>
-                    <p>Envío: $5.00</p>
-                    <p>Total: $15.00</p>
-                    <button class="checkout-btn">Proceder al Pago</button>
-                </div>
-            </section>
-        </main>
-        <script src="../JS/cart.js"></script>
-    </body>
+    </section>
+    <script src="${pageContext.request.contextPath}/JS/sections-main.js"></script>
+</body>
 </html>

@@ -1,122 +1,76 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 27/06/2024, 1:05:04 p. m.
-    Author     : Propietario
-*/
-
+@import url(global.css);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(components.css);
-@import url(global.css);
-body{
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-}
-::selection{
-  background-color: var(--principal__color);
-  color: var(--secondary__color);
-  transition: 1s ease;
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-main {
-    padding: 1rem;
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+.cart__container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 .cart {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--secondary__color);
-    padding: 1rem;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px var(--light__gray);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
 }
 
-.cart h2 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.cart-item {
+.item__container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid var(--light__gray);
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
 }
 
-.cart-item > div {
-    flex: 1;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-.item-cantidad input {
-    width: 50px;
-}
-
-.cart-summary {
-    text-align: LEFT;
-}
-
-.cart-summary h3 {
-    margin: 0 0 1rem;
-    font-size: 1.25rem;
-}
-
-.cart-summary p {
-    margin: 0.5rem 0;
-}
-
-.checkout-btn {
-    background-color: #2ecc71;
-    color: var(--secondary__color);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    cursor: pointer;
+.item__container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 4px;
-    font-size: 1rem;
+    margin-right: 15px;
 }
 
-.remove-btn {
+.cart__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cart__price, .cart__cantidad, .cart__total {
+    margin: 5px 0;
+}
+
+.remove-from-cart {
     background-color: #e74c3c;
-    color: var(--secondary__color);
     border: none;
-    padding: 0.5rem;
-    cursor: pointer;
+    color: #fff;
+    padding: 8px 15px;
     border-radius: 4px;
-}
-/* Media Queries */
-@media (max-width: 600px) {
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cart-item > div {
-        text-align: left;
-        padding: 0.5rem 0;
-    }
-
-    .cart-summary {
-        text-align: left;
-    }
-
-    .checkout-btn {
-        width: 100%;
-        padding: 1rem;
-        font-size: 1.25rem;
-    }
-
-    header {
-        padding: 0.5rem;
-    }
-
-    footer {
-        padding: 0.5rem;
-    }
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
 }
 
+.remove-from-cart:hover {
+    background-color: #c0392b;
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+}

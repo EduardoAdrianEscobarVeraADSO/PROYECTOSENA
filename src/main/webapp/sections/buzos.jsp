@@ -1,5 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="model.prendasModel"%>
+<%@page import="model.UsuarioModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +14,10 @@
     </head>
     <body>
         <%@ include file="../components/header3.jsp" %>
-
+        <%
+            UsuarioModel usuariomodel2 = (UsuarioModel) session.getAttribute("login");
+            int idUsuarioCart = (usuariomodel2 != null) ? usuariomodel2.getId() : -1;
+        %>
         <h1>Prendas por Categoría</h1>
         <section class="products__container">
             <div class="products">
@@ -25,22 +29,40 @@
                         boolean stockDisponible = prenda.getStock_prenda() > 0;
                         String botonTexto = stockDisponible ? "Añadir al carrito" : "Agotada";
                         String botonClase = stockDisponible ? "add-to-cart" : "add-to-cart disabled";
+                %>
+                        <div class='products item__container'>
+                            <img src='<%= imagenPath %>' alt='<%= prenda.getNombre_prenda() %>' />
+                            <h2 class='products__title'><%= prenda.getNombre_prenda() %></h2>
+                            <p class='products__price'>Precio: $<%= prenda.getPrecio() %></p>
+                            <div class='product__details'>
+                                <p class='product__description'><%= prenda.getDescripcion_prenda() %></p>
+                                <p class='product__talla'>Talla: <%= prenda.getTalla() %></p>
+                                <%
+                                if (stockDisponible) {
+                                %>
+                                    <form action="CarritoServlet" method="post">
+                                        <input type="hidden" name="action" value="agregar">
+                                        <input type="hidden" name="idUsuario" value="<%= idUsuarioCart %>">
+                                        <input type="hidden" name="idPrenda" value="<%= prenda.getID_prenda() %>">
+                                        <input type="number" id="cantidad" name="cantidad" min="1" max="<%= prenda.getStock_prenda() %>" value="1">
+                                        <button type="submit" class="<%= botonClase %>"><%= botonTexto %></button>
+                                    </form>
 
-                        out.print("<div class='products item__container'>"
-                                + "<img src='" + imagenPath + "' alt='" + prenda.getNombre_prenda() + "' />"
-                                + "<h2 class='products__title'>" + prenda.getNombre_prenda() + "</h2>"
-                                + "<p class='products__price'>Precio: $" + prenda.getPrecio() + "</p>"
-                                + "<div class='product__details'>"
-                                + "<p class='product__description'>" + prenda.getDescripcion_prenda() + "</p>"
-                                + "<p class='product__talla'>Talla: " + prenda.getTalla() + "</p>"
-                                + "<button class='" + botonClase + "'>" + botonTexto + "</button>"
-                                + "</div>"
-                                + "</div>");
+                                <%
+                                } else {
+                                %>
+                                    <button class="<%= botonClase %>"><%= botonTexto %></button>
+                                <%
+                                }
+                                %>
+                            </div>
+                        </div>
+                <%
                     }
                 }
                 %>
-            </div> 
+            </div>
         </section>
-    <script src="${pageContext.request.contextPath}/JS/cart.js"></script>            
+        <script src="${pageContext.request.contextPath}/JS/sections-main.js"></script>
     </body>
 </html>
